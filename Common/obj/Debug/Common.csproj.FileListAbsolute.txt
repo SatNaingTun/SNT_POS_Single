@@ -1,0 +1,14 @@
+E:\vsprojects\SNT_POS_Single\Common\bin\Debug\Common.dll.config
+E:\vsprojects\SNT_POS_Single\Common\bin\Debug\Common.dll
+E:\vsprojects\SNT_POS_Single\Common\bin\Debug\Common.pdb
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\Common.dll
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\Common.pdb
+D:\VS publish\SNT_POS_Single\Common\bin\Debug\Common.dll.config
+D:\VS publish\SNT_POS_Single\Common\bin\Debug\Common.dll
+D:\VS publish\SNT_POS_Single\Common\bin\Debug\Common.pdb
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\Common.dll
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\Common.pdb
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Single_Management.Properties.Resources.resources
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\Common.csproj.GenerateResource.Cache

@@ -1,0 +1,6 @@
+LogType:Error 
+at 19/01/2023 11:54:57 AM The specified field 'isDeleted' could refer to more than one table listed in the FROM clause of your SQL statement.
+LogType:Error 
+at 19/01/2023 11:55:05 AMThe specified field 'isDeleted' could refer to more than one table listed in the FROM clause of your SQL statement.
+LogType:Error 
+at 19/01/2023 11:55:16 AMThe specified field 'isDeleted' could refer to more than one table listed in the FROM clause of your SQL statement.

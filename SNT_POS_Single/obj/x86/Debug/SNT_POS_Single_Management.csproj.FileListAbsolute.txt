@@ -1,0 +1,52 @@
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.exe.config
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.exe
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.pdb
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\bin\Debug\Data\SNT_POS_DB.accdb
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.exe
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.pdb
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\bin\Debug\Common.dll
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\bin\Debug\Common.pdb
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.csprojResolveAssemblyReference.cache
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.LoginForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.POS_Management.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.Properties.Resources.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.ReportForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.RoleForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.SearchForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.SessionForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.StockForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.StockInForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.UserForm.resources
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.csproj.GenerateResource.Cache
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\RdlCompile.cache
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\RdlCompile.compiled
+D:\VS publish\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.Contactform.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\Data\SNT_POS_DB.accdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.exe.config
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.exe
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.pdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNTPOS_UI_Common.dll
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Common.dll
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Common.pdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNTPOS_UI_Common.pdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.csprojResolveAssemblyReference.cache
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.Contactform.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.InactiveForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.LoginForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.POS_Management.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.Properties.Resources.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.ReportForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.RoleForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.SearchForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.SessionForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.SessionListForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.StockForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.StockInForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.UnitForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.UnitRSForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.UserForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single_Management.csproj.GenerateResource.Cache
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\RdlCompile.cache
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\RdlCompile.compiled
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.exe
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.pdb

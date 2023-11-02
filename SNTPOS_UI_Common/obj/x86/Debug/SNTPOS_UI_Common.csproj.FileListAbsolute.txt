@@ -1,0 +1,12 @@
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\SNTPOS_UI_Common.dll
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\SNTPOS_UI_Common.pdb
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\SNT_POS_Common.dll
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\SNT_POS_Common.pdb
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.csprojResolveAssemblyReference.cache
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.DataConnectFrom.resources
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.LoginForm.resources
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.Properties.Resources.resources
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.UnitCalculator.resources
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.csproj.GenerateResource.Cache
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.dll
+E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.pdb

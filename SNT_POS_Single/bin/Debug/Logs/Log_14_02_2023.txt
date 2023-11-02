@@ -1,0 +1,118 @@
+LogType:Error 
+at 14/02/2023 9:34:29 AM Syntax error in FROM clause.
+LogType:Error 
+at 14/02/2023 9:34:32 AMSyntax error in FROM clause.
+LogType:Error 
+at 14/02/2023 9:34:39 AMSyntax error in FROM clause.
+LogType:Error 
+at 14/02/2023 11:47:25 AMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 11:47:31 AMThe INSERT INTO statement contains the following unknown field name: 'VendorID'. Make sure you have typed the name correctly, and try the operation again.
+LogType:Error 
+at 14/02/2023 11:51:53 AMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 11:51:55 AMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 11:51:58 AMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 11:52:01 AMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 11:52:03 AMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:01:43 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:01:45 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:02:45 PMThe INSERT INTO statement contains the following unknown field name: 'VendorID'. Make sure you have typed the name correctly, and try the operation again.
+LogType:Error 
+at 14/02/2023 12:02:48 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:05:00 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:05:19 PMThe INSERT INTO statement contains the following unknown field name: 'VendorID'. Make sure you have typed the name correctly, and try the operation again.
+LogType:Error 
+at 14/02/2023 12:10:29 PMThe INSERT INTO statement contains the following unknown field name: 'VendorID'. Make sure you have typed the name correctly, and try the operation again.
+LogType:Error 
+at 14/02/2023 12:10:31 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:23:28 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:23:30 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:23:33 PMNo value given for one or more required parameters.
+LogType:Error 
+at 14/02/2023 12:26:06 PMSyntax error in INSERT INTO statement.
+LogType:Error 
+at 14/02/2023 12:44:13 PMParameter ?_7 has no default value.
+LogType:Error 
+at 14/02/2023 12:44:21 PMParameter ?_7 has no default value.
+LogType:Error 
+at 14/02/2023 12:44:30 PMParameter ?_7 has no default value.
+LogType:Error 
+at 14/02/2023 12:45:27 PMParameter ?_7 has no default value.
+LogType:Error 
+at 14/02/2023 12:50:47 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 12:51:00 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 12:51:08 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 12:51:18 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 12:51:28 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 3:13:46 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 3:17:03 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 3:17:11 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 3:20:45 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 3:20:54 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 3:22:30 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 3:25:01 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 3:25:22 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 3:25:35 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 4:17:51 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 4:19:46 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 4:20:00 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 4:20:10 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 4:25:35 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 4:25:43 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 4:28:09 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 4:33:05 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 4:33:15 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 4:33:25 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 4:33:35 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 4:56:20 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 4:56:29 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 5:04:08 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 5:04:29 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 5:04:36 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 5:04:43 PMSyntax error (missing operator) in query expression 'nullwhere [ID]=?'.
+LogType:Error 
+at 14/02/2023 5:08:06 PMParameter ?_6 has no default value.
+LogType:Error 
+at 14/02/2023 5:08:21 PMParameter ?_6 has no default value.

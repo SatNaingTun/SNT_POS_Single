@@ -1,0 +1,12 @@
+LogType:Error 
+at 17/06/2023 10:55:28 AM The Microsoft Access database engine cannot find the input table or query 'tbl_Vendor'. Make sure it exists and that its name is spelled correctly.
+LogType:Error 
+at 17/06/2023 1:41:29 PMThe Microsoft Access database engine cannot find the input table or query 'tbl_Vendor'. Make sure it exists and that its name is spelled correctly.
+LogType:Error 
+at 17/06/2023 1:41:37 PMThe Microsoft Access database engine cannot find the input table or query 'tbl_Vendor'. Make sure it exists and that its name is spelled correctly.
+LogType:Error 
+at 17/06/2023 1:41:49 PMThe Microsoft Access database engine cannot find the input table or query 'tbl_Vendor'. Make sure it exists and that its name is spelled correctly.
+LogType:Error 
+at 17/06/2023 1:41:49 PMCould not find output table 'tbl_Vendor'.
+LogType:Error 
+at 17/06/2023 1:41:53 PMThe Microsoft Access database engine cannot find the input table or query 'tbl_Vendor'. Make sure it exists and that its name is spelled correctly.

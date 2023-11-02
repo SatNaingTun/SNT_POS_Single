@@ -1,0 +1,42 @@
+LogType:Error 
+at 19/01/2023 2:50:08 PM 'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:50:20 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:50:50 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:52:36 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:52:46 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:53:10 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:53:47 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:55:04 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:55:57 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:59:15 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:59:32 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 2:59:57 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:00:14 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:01:12 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:01:31 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:02:15 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:02:30 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:02:54 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:09:47 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:09:56 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+LogType:Error 
+at 19/01/2023 3:36:28 PM'E:\vsprojects\SNT_POS_Single\SNTPOS_UI_Common\bin\Debug\Data\SNT_POS_DB.accdb' is not a valid path. Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.

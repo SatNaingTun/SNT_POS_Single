@@ -1,0 +1,15 @@
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.exe.config
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.LoginForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.Properties.Resources.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.csproj.GenerateResource.Cache
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\Data\SNT_POS_DB.accdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.exe
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\bin\Debug\SNT_POS_Single.pdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.exe
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.pdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.POS_Management.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.csprojResolveAssemblyReference.cache
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.UserForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.RoleForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.SearchForm.resources
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single\obj\x86\Debug\SNT_POS_Single.SaleForm.resources

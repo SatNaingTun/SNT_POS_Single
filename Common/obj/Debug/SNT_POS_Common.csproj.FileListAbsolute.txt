@@ -1,0 +1,7 @@
+E:\vsprojects\SNT_POS_Single\Common\bin\Debug\SNT_POS_Common.dll.config
+E:\vsprojects\SNT_POS_Single\Common\bin\Debug\SNT_POS_Common.dll
+E:\vsprojects\SNT_POS_Single\Common\bin\Debug\SNT_POS_Common.pdb
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Single.Properties.Resources.resources
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.csproj.GenerateResource.Cache
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.dll
+E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.pdb

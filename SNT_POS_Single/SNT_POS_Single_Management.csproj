@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{601DD6C0-A795-492F-9DA3-328B3A1B44D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SNT_POS_Single_Management</RootNamespace>
+    <AssemblyName>SNT_POS_Single</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SNT_POS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contactform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactform.Designer.cs">
+      <DependentUpon>Contactform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SNT_POS_DBDataSet.cs">
+      <DependentUpon>SNT_POS_DBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SNT_POS_DBDataSet.Designer.cs">
+      <DependentUpon>SNT_POS_DBDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="InactiveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InactiveForm.Designer.cs">
+      <DependentUpon>InactiveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POS_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS_Management.Designer.cs">
+      <DependentUpon>POS_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintExtension.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleForm.Designer.cs">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SessionForm.Designer.cs">
+      <DependentUpon>SessionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SessionListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SessionListForm.Designer.cs">
+      <DependentUpon>SessionListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockInForm.Designer.cs">
+      <DependentUpon>StockInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitForm.Designer.cs">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitRSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitRSForm.Designer.cs">
+      <DependentUpon>UnitRSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Contactform.resx">
+      <DependentUpon>Contactform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InactiveForm.resx">
+      <DependentUpon>InactiveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS_Management.resx">
+      <DependentUpon>POS_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ChartSummary.rdlc" />
+    <EmbeddedResource Include="Report\StockSummary2.rdlc" />
+    <EmbeddedResource Include="Report\VendorListReport.rdlc" />
+    <EmbeddedResource Include="Report\LowBalanceStockSummary.rdlc" />
+    <EmbeddedResource Include="Report\ExpireDate.rdlc" />
+    <EmbeddedResource Include="Report\StockMenu.rdlc" />
+    <EmbeddedResource Include="Report\SaleDetail.rdlc" />
+    <EmbeddedResource Include="Report\Vouncher.rdlc" />
+    <EmbeddedResource Include="Report\Vouncher2.rdlc" />
+    <EmbeddedResource Include="Report\StockPriceDifference.rdlc" />
+    <EmbeddedResource Include="Report\StockSummary.rdlc" />
+    <EmbeddedResource Include="Report\StockIn.rdlc" />
+    <EmbeddedResource Include="Report\UnitRelation.rdlc" />
+    <EmbeddedResource Include="Report\Summary.rdlc" />
+    <EmbeddedResource Include="RoleForm.resx">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SessionForm.resx">
+      <DependentUpon>SessionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SessionListForm.resx">
+      <DependentUpon>SessionListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockInForm.resx">
+      <DependentUpon>StockInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitForm.resx">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitRSForm.resx">
+      <DependentUpon>UnitRSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Data\SNT_POS_DBDataSet.xsc">
+      <DependentUpon>SNT_POS_DBDataSet.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\SNT_POS_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SNT_POS_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\SNT_POS_DBDataSet.xss">
+      <DependentUpon>SNT_POS_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+SaleDataTable1DataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+SaleSummaryDataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+StockInSummaryDataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+StockSummary2DataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+tbl_companyDataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+tbl_StockIn2DataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+tbl_StockRow.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+tbl_StockSummaryDataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+tbl_VendorDataTable.datasource" />
+    <None Include="Properties\DataSources\SNT_POS_Single_Management.Data.SNT_POS_DBDataSet+Unit_RS2DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\SNT_POS_Common.csproj">
+      <Project>{D17297C3-4DD6-4571-8E5A-31E319CEF61B}</Project>
+      <Name>SNT_POS_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SNTPOS_UI_Common\SNTPOS_UI_Common.csproj">
+      <Project>{B656B038-532A-488A-B7E4-A57404CE4BD8}</Project>
+      <Name>SNTPOS_UI_Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\SNT_POS_DB.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\SNT_POS.ico" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\refresh_arrows_14418.png" />
+    <None Include="Resources\user-blue_25325.png" />
+    <None Include="Resources\Save_Icon_icon-icons.com_69139.png" />
+    <None Include="Resources\1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.png" />
+    <None Include="Resources\app_ui_interaction_interface_browser_window_select_icon_219771.png" />
+    <None Include="Resources\3440908-ecommerce-label-price-shop-shopping-store-tag_107534.png" />
+    <None Include="Resources\3592863-accounting-calculate-calculation-calculator-general-math-office_107744.png" />
+    <None Include="Resources\1486504359-calculate-business-finance-calculator-device-math_81327.png" />
+    <None Include="Resources\receipt_update_icon_177359.png" />
+    <None Include="Resources\print_102332.png" />
+    <None Include="Resources\restore_trash_icon_195534.png" />
+    <None Include="Resources\recycling_recyclebin_empty_delete_trash_1771.png" />
+    <None Include="Resources\data_icon_155952.png" />
+    <None Include="Resources\register_internet_direction_web_right_button_enter_arrow_login_icon_210831.png" />
+    <None Include="Resources\download_database_21022.png" />
+    <Content Include="SNT_POS.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
