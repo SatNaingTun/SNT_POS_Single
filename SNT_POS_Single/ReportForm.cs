@@ -94,6 +94,8 @@ namespace SNT_POS_Single_Management
                     previewVendorList();
                 else if (this.Text == "Customer List Report")
                     previewCustomerList();
+                else if (this.Text == "Stock Checker Report")
+                    previewStockChecker(string.Empty);
 
             }
             addCombo(this.dt);
@@ -111,7 +113,11 @@ namespace SNT_POS_Single_Management
                     // DataTable dtStock = stockcontrol.getAll();
                     AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
                     //collection.AddRange(dtStock.AsEnumerable().Select(r => r.Field<string>("StockName")).ToArray());
-                    if (dt.Columns[comboSearch.SelectedItem.ToString()].DataType == typeof(string))
+                    if(comboSearch.SelectedItem.ToString()=="StockName")
+                    {
+                        collection.AddRange(stockcontrol.getAll().AsEnumerable().Select(r => r.Field<string>("StockName")).Where<string>(s => !string.IsNullOrEmpty(s)).ToArray());
+                    }
+                    else if (dt.Columns[comboSearch.SelectedItem.ToString()].DataType == typeof(string))
                     {
                         collection.AddRange(dt.AsEnumerable().Select(r => r.Field<string>(comboSearch.SelectedItem.ToString())).Where<string>(s => !string.IsNullOrEmpty(s)).ToArray());
                     }
@@ -779,12 +785,71 @@ namespace SNT_POS_Single_Management
                     previewVendorList(txtfilter.Text);
                 else if (this.Text == "Customer List Report")
                     previewCustomerList(txtfilter.Text);
+                else if (this.Text == "Stock Checker Report")
+                    previewStockChecker(txtfilter.Text);
             }
 
             setAutoCompletefilter();
 
             
             
+        }
+        private void previewStockChecker(string filterText)
+        {
+            try
+            {
+
+                this.reportViewer1.LocalReport.ReportEmbeddedResource = "SNT_POS_Single_Management.Report.StockChecker.rdlc";
+
+                this.reportViewer1.LocalReport.DataSources.Clear();
+
+                dt = new DataTable();
+                dt.Columns.Add("StockID", typeof(int));
+                dt.Columns.Add("StockName", typeof(string));
+                dt.Columns.Add("UnitName", typeof(string));
+               
+                if (string.IsNullOrEmpty(filterText))
+                {
+                    MessageBox.Show("Enter You want to check");
+                }
+                else
+                {
+                    ReportDataSource companyDatasource2 = new ReportDataSource("DsCompany", (DataTable)tbl_company.GetData());
+
+                    this.reportViewer1.LocalReport.DataSources.Add(companyDatasource2);
+                    ReportDataSource summaryDatasource = new ReportDataSource("StockSummaryDataSet", (DataTable)tbl_StockSummary.GetStockDataByDT(startDate.Value, startDate.Value, endDate.Value, startDate.Value, startDate.Value, endDate.Value).filter(filterText, comboSearch.SelectedItem.ToString()));
+                    this.reportViewer1.LocalReport.DataSources.Add(summaryDatasource);
+                    ReportDataSource saleDatasource = new ReportDataSource("SaleDataSet", (DataTable)tbl_Sale.GetDataByDT(startDate.Value, endDate.Value).filter(filterText, comboSearch.SelectedItem.ToString()));
+                    this.reportViewer1.LocalReport.DataSources.Add(saleDatasource);
+                    ReportDataSource stockInDatasource = new ReportDataSource("StockInDataSet", (DataTable)tbl_StockIn.GetDataByDT(startDate.Value, endDate.Value).filter(filterText, comboSearch.SelectedItem.ToString()));
+                    this.reportViewer1.LocalReport.DataSources.Add(stockInDatasource);
+                   
+
+                }
+                // ReportDataSource mydatasource = new ReportDataSource("DataSet1", (DataTable)tbl_StockSummary.GetData());
+              
+
+
+                
+
+
+                ReportParameter[] parameters = new ReportParameter[5];
+                parameters[0] = new ReportParameter("fromDate", startDate.Value.ToString());
+                parameters[1] = new ReportParameter("toDate", endDate.Value.ToString());
+                parameters[2] = new ReportParameter("filterText", filterText == null ? "null" : filterText);
+                parameters[3] = new ReportParameter("minValue", numMinValue.Value.ToString());
+                parameters[4] = new ReportParameter("maxValue", numMaxValue.Value.ToString());
+                this.reportViewer1.LocalReport.SetParameters(parameters);
+
+                this.reportViewer1.LocalReport.Refresh();
+                this.reportViewer1.RefreshReport();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Stock Summary Error");
+            }
         }
 
         private void comboSearch_SelectedIndexChanged(object sender, EventArgs e)

@@ -419,6 +419,16 @@ namespace SNT_POS_Single_Management
             uf.Show();
         }
 
+        private void stockCheckerReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm rf = new ReportForm();
+            rf.MdiParent = this;
+            rf.Text = "Stock Checker Report";
+            setFitIcon(rf);
+
+            rf.Show();
+        }
+
        
     }
 }

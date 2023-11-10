@@ -364,7 +364,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Amount</Value>
+                              <Value>Cash Amount</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                               </Style>

@@ -39,6 +39,7 @@
             this.vendorProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unitRelationShipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currencyUnitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,7 @@
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arrangeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.currencyUnitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockCheckerReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,6 +163,13 @@
             this.unitRelationShipToolStripMenuItem.Visible = false;
             this.unitRelationShipToolStripMenuItem.Click += new System.EventHandler(this.unitRelationShipToolStripMenuItem_Click);
             // 
+            // currencyUnitsToolStripMenuItem
+            // 
+            this.currencyUnitsToolStripMenuItem.Name = "currencyUnitsToolStripMenuItem";
+            this.currencyUnitsToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.currencyUnitsToolStripMenuItem.Text = "CurrencyUnits";
+            this.currencyUnitsToolStripMenuItem.Click += new System.EventHandler(this.currencyUnitsToolStripMenuItem_Click);
+            // 
             // trToolStripMenuItem
             // 
             this.trToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -219,7 +227,8 @@
             this.expireDateReportToolStripMenuItem,
             this.lowBalanceStockReportToolStripMenuItem,
             this.vendorListReportToolStripMenuItem,
-            this.customerListReportToolStripMenuItem});
+            this.customerListReportToolStripMenuItem,
+            this.stockCheckerReportToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(69, 25);
             this.reportToolStripMenuItem.Text = "Report";
@@ -372,12 +381,12 @@
             this.lblUserName.TabIndex = 3;
             this.lblUserName.Text = "userName";
             // 
-            // currencyUnitsToolStripMenuItem
+            // stockCheckerReportToolStripMenuItem
             // 
-            this.currencyUnitsToolStripMenuItem.Name = "currencyUnitsToolStripMenuItem";
-            this.currencyUnitsToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
-            this.currencyUnitsToolStripMenuItem.Text = "CurrencyUnits";
-            this.currencyUnitsToolStripMenuItem.Click += new System.EventHandler(this.currencyUnitsToolStripMenuItem_Click);
+            this.stockCheckerReportToolStripMenuItem.Name = "stockCheckerReportToolStripMenuItem";
+            this.stockCheckerReportToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
+            this.stockCheckerReportToolStripMenuItem.Text = "Stock Checker Report";
+            this.stockCheckerReportToolStripMenuItem.Click += new System.EventHandler(this.stockCheckerReportToolStripMenuItem_Click);
             // 
             // POS_Management
             // 
@@ -442,5 +451,6 @@
         private System.Windows.Forms.ToolStripMenuItem latestStockWithStockImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inactiveDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currencyUnitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockCheckerReportToolStripMenuItem;
     }
 }
