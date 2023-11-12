@@ -22,3 +22,4 @@ D:\VS publish\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.Uni
 D:\VS publish\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.csproj.GenerateResource.Cache
 D:\VS publish\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.dll
 D:\VS publish\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.pdb
+D:\VS publish\SNT_POS_Single\SNTPOS_UI_Common\obj\x86\Debug\SNTPOS_UI_Common.DialogForm.resources
