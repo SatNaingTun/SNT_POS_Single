@@ -230,7 +230,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Image = global::SNT_POS_Single_Management.Properties.Resources.search;
+            this.btnSearch.Image = global::SNT_POS_Single_Management.Properties.Resources.data_icon;
             this.btnSearch.Location = new System.Drawing.Point(302, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(39, 41);

@@ -4,8 +4,6 @@ D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sa
 D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\Data\SNT_POS_DB.accdb
 D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\SNT_POS_Single_Sale.exe
 D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\SNT_POS_Single_Sale.pdb
-D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\Common.dll
-D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\Common.pdb
 D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.csprojResolveAssemblyReference.cache
 D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.LoginForm.resources
 D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.Properties.Resources.resources
@@ -31,3 +29,8 @@ E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\RdlCompile.cache
 E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\RdlCompile.compiled
 E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.exe
 E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.pdb
+D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\SNTPOS_UI_Common.dll
+D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\SNT_POS_Common.dll
+D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\SNT_POS_Common.pdb
+D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\bin\Debug\SNTPOS_UI_Common.pdb
+D:\VS publish\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.VrReport.resources

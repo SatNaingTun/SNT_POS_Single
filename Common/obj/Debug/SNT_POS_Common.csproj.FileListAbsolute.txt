@@ -5,3 +5,11 @@ E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Single.Properties.Resource
 E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.csproj.GenerateResource.Cache
 E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.dll
 E:\vsprojects\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.pdb
+D:\VS publish\SNT_POS_Single\Common\bin\Debug\SNT_POS_Common.dll.config
+D:\VS publish\SNT_POS_Single\Common\bin\Debug\SNT_POS_Common.dll
+D:\VS publish\SNT_POS_Single\Common\bin\Debug\SNT_POS_Common.pdb
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\SNT_POS_Single.Properties.Resources.resources
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.csproj.GenerateResource.Cache
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.dll
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.pdb
+D:\VS publish\SNT_POS_Single\Common\obj\Debug\SNT_POS_Common.csprojResolveAssemblyReference.cache

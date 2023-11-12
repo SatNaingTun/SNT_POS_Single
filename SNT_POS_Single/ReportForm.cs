@@ -810,7 +810,7 @@ namespace SNT_POS_Single_Management
                
                 if (string.IsNullOrEmpty(filterText))
                 {
-                    MessageBox.Show("Enter You want to check");
+                    txtfilter.Focus();
                 }
                 else
                 {
