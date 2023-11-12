@@ -187,28 +187,11 @@ namespace SNT_POS_Single_Management
 
         private void sessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SessionController sessioncontrol = new SessionController();
-            /*
-            SearchForm sef = new SearchForm();
-            sef.addData(sessioncontrol.getAll()));
-          */
-            SessionListForm sef = new SessionListForm();
-            sef.addData(sessioncontrol.getByDT(DateTime.Today, DateTime.Today.AddDays(1)));
-            if (sef.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
-            {
-               
-                if (sef.getID() != -1)
-                {
-                    SessionForm sf = new SessionForm();
-                    sf.session = sessioncontrol.getById(sef.getID());
-                    sf.MdiParent = this;
-                    setFitIcon(sf);
-                    sf.Show();
-                    
-                }
-             
-             
-            }
+            
+            SessionListForm sessionList = new SessionListForm();
+            sessionList.Show();
+            setFitIcon(sessionList);
+           
              
         }
 
