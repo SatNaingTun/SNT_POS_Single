@@ -15,7 +15,8 @@ namespace SNT_POS_Single_Management
 {
     public partial class SessionForm : Form
     {
-        public Session session; SaleController salecontrol = new SaleController();
+        public Session session; 
+        SaleController salecontrol = new SaleController();
         StockController stockcontrol = new StockController();
         SessionController sessioncontrol = new SessionController();
         Vouncher_Item item;
@@ -73,37 +74,55 @@ namespace SNT_POS_Single_Management
         {
             if (dataGridView1.CurrentRow != null)
             {
-                item = new Vouncher_Item();
-                item.stock = new Stock();
+              
                 try
                 {
-                    item.ID = (int)dataGridView1.CurrentRow.Cells["ID"].Value;
-                    lblID.Text = item.ID.ToString();
-                   item.VouncherID = (string)dataGridView1.CurrentRow.Cells["VouncherID"].Value.ToString();
-                    item.stock.ID = (int)dataGridView1.CurrentRow.Cells["StockID"].Value;
-                    item.stock.Name = dataGridView1.CurrentRow.Cells["StockName"].Value.ToString();
-                     StockCombo.SelectedIndex = StockCombo.FindString(item.stock.Name);
-                 item.stock.Price = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Price"].Value);
+                 //   item = new Vouncher_Item();
+                 //   item.stock = new Stock();
 
-                 item.quantity = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Quantity"].Value);
+                 //   item.ID = (int)dataGridView1.CurrentRow.Cells["ID"].Value;
+                    
+
+                 //  item.VouncherID = (string)dataGridView1.CurrentRow.Cells["VouncherID"].Value.ToString();
+                 //   item.stock.ID = (int)dataGridView1.CurrentRow.Cells["StockID"].Value;
+                 //   item.stock.Name = dataGridView1.CurrentRow.Cells["StockName"].Value.ToString();
+
+                   
+
+                 //item.stock.Price = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Price"].Value);
+                 //item.quantity = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Quantity"].Value);
+                 //item.discount = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Discount"].Value);
+                 //item.saletype = saletypecontrol.getById((int)dataGridView1.CurrentRow.Cells["SaleTypeID"].Value);
+                 //item.Amt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Amount"].Value);
+                 //item.NetAmt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["NetAmount"].Value);
+
+                  item = salecontrol.getItemById((int)dataGridView1.CurrentRow.Cells["ID"].Value);
+                 lblID.Text = item.ID.ToString();
+                 StockCombo.SelectedIndex = StockCombo.FindString(item.stock.Name);
                  txtquantity.Value = item.quantity;
-                  item.discount = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Discount"].Value);
+               
 
-                  item.saletype = saletypecontrol.getById((int)dataGridView1.CurrentRow.Cells["SaleTypeID"].Value);
+                  
                   comboSaleType.SelectedIndex = comboSaleType.FindString(item.saletype.Name);
                    
 
-                item.Amt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Amount"].Value);
-                 item.NetAmt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["NetAmount"].Value);
-                 txtCustomerName.Text = dataGridView1.CurrentRow.Cells["CustomerName"].Value.ToString();
-                 txtCustomerPhone.Text = dataGridView1.CurrentRow.Cells["CustomerPhone"].Value.ToString();
-                 lblCustomerID.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
+              
+                 //txtCustomerName.Text = dataGridView1.CurrentRow.Cells["CustomerName"].Value.ToString();
+                 //txtCustomerPhone.Text = dataGridView1.CurrentRow.Cells["CustomerPhone"].Value.ToString();
+                 //lblCustomerID.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
+
+                  txtCustomerName.Text = item.customer.Name;
+                  txtCustomerPhone.Text = item.customer.Phone;
+                  lblCustomerID.Text = item.customer.ID.ToString();
+
                 txtAmount.Text = item.Amt.ToString();
                txtNetAmount.Text = item.NetAmt.ToString();
                 //  comboSaleType.SelectedIndex = comboSaleType.FindString(item.saletype.Name);
                comboSellPrice.Items.Clear();
-               comboSellPrice.Items.Add(dataGridView1.CurrentRow.Cells["Price"].Value);
+               comboSellPrice.Items.Add(item.stock.Price);
                comboSellPrice.Items.Add(stockcontrol.getStockPrice((int)item.stock.ID).ToString());
+
+               item.stock.Balance += item.quantity;
 
                if (comboSellPrice.Items.Count > 0)
                    comboSellPrice.SelectedIndex = 0;
@@ -151,6 +170,9 @@ namespace SNT_POS_Single_Management
                     {
                         salecontrol.updateSaleType(item,getCustomerID(txtCustomerName.Text,txtCustomerPhone.Text));
                     }
+                    item.stock.Balance -= item.quantity;
+                    stockcontrol.updateBalance(item.stock);
+
                     txtNetAmount.Text = item.NetAmt.ToString();
                    // MessageBox.Show(item.toArray().ToString());
                     refreshData(salecontrol.getBySessionId((int)session.ID));

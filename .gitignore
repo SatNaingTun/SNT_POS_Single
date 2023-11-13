@@ -1,3 +1,5 @@
 SNT_POS_Single/obj/x86/Debug/*
 SNT_POS_Single_Sale/obj/x86/Debug/*
 SNTPOS_UI_Common/obj/x86/Debug/*
+SNT_POS_Single/Data/SNT_POS_DB.laccdb
+SNT_POS_Single_Sale/Data/SNT_POS_DB.laccdb

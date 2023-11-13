@@ -13,46 +13,47 @@ namespace SNT_POS_Common.Entity
       public SaleType saletype { get; set; }
       public  decimal  Amt, quantity, discount, NetAmt;
       public string VouncherID;
-      
+      public Contact customer;
 
       public Vouncher_Item()
       {
             
       }
 
-    
-      //public  object[] toArray( )
-      //{
-         
-      //    List<object> list = new List<object>();
-      //    list.Add(stock.ID);
-      //    list.Add(stock.Name);
-      //    list.Add(stock.Price);
-      //    list.Add(quantity);
-      //    list.Add(Amt);
-      //    list.Add(discount);
-      //    list.Add(NetAmt);
-      //    list.Add(VouncherID);
-          
-      //    list.Add(stock.unit.ID);
-      //    list.Add(stock.unit.Name);
-          
-      //    return list.ToArray();
 
-      //}
-
-      public virtual object[] toArray()
+      public object[] toArray()
       {
-          var bindingFlags = BindingFlags.Public
-          |BindingFlags.Instance 
-         // |BindingFlags.NonPublic 
-                 ;
-          var fieldValues = this.GetType()
-                               .GetFields(bindingFlags)
-                               .Select(field => field.GetValue(this))
-                               .ToArray();
-          return fieldValues;
+
+          List<object> list = new List<object>();
+          list.Add(stock.ID);
+          list.Add(stock.Name);
+          list.Add(stock.Price);
+          list.Add(quantity);
+          list.Add(Amt);
+          list.Add(discount);
+          list.Add(NetAmt);
+         // list.Add(VouncherID);
+
+          list.Add(stock.unit.ID);
+          list.Add(stock.unit.Name);
+          list.Add(stock.Balance);
+
+          return list.ToArray();
+
       }
+
+      //public virtual object[] toArray()
+      //{
+      //    var bindingFlags = BindingFlags.Public
+      //    |BindingFlags.Instance 
+      //   // |BindingFlags.NonPublic 
+      //           ;
+      //    var fieldValues = this.GetType()
+      //                         .GetFields(bindingFlags)
+      //                         .Select(field => field.GetValue(this))
+      //                         .ToArray();
+      //    return fieldValues;
+      //}
     
      
     

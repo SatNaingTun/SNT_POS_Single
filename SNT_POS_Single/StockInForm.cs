@@ -48,7 +48,7 @@ namespace SNT_POS_Single_Management
                     else
                         stockIncontrol.update(stockIn, expireDate.Value,stockIn.vendor.ID);
                     */
-                   
+                    stockIn.stock.Balance += stockIn.InBalance;
                     stockIncontrol.update(stockIn);
                     
 
@@ -68,7 +68,7 @@ namespace SNT_POS_Single_Management
                     else
                         stockIncontrol.save(stockIn, expireDate.Value,vendor);
                      */
-                   
+                    stockIn.stock.Balance += stockIn.InBalance;
                     stockIncontrol.save(stockIn);
                     //stockIncontrol.save();
                    
@@ -84,18 +84,24 @@ namespace SNT_POS_Single_Management
         }
         private void loadStockdata()
         {
-            if (btnSave.Text == "Save")
+            if (btnSave.Text == "Save" && suggestGrid.CurrentRow != null)
             {
                 stockIn = new StockIn();
+
+                //stockIn.stock = new Stock();
+                //stockIn.stock.ID = (int)suggestGrid.CurrentRow.Cells["ID"].Value;
+                //txtStockName.Text = stockIn.stock.Name = suggestGrid.CurrentRow.Cells["StockName"].Value.ToString();
+
+                //stockIn.stock.Price = (decimal)suggestGrid.CurrentRow.Cells["Price"].Value;
+                //stockIn.stock.Balance = (decimal)suggestGrid.CurrentRow.Cells["StockBalance"].Value;
+
+                stockIn.stock = stockcontrol.getById((int)suggestGrid.CurrentRow.Cells["ID"].Value);
             }
             if (suggestGrid.CurrentRow != null)
             {
                 // stockIn = new StockIn();
-                stockIn.stock = new Stock();
-                stockIn.stock.ID = (int)suggestGrid.CurrentRow.Cells["ID"].Value;
-                txtStockName.Text = stockIn.stock.Name = suggestGrid.CurrentRow.Cells["StockName"].Value.ToString();
+                
 
-                stockIn.stock.Price = (decimal)suggestGrid.CurrentRow.Cells["Price"].Value;
                 stockIn.InBalance = txtquantity.Value;
                 stockIn.BuyPrice = numBuyPrice.Value;
                 stockIn.StockInDateTime = stDate.Value;
@@ -276,7 +282,8 @@ namespace SNT_POS_Single_Management
                     if (sf.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                     {
                         stockIn = stockIncontrol.getById(sf.getID());
-                        stockIn.stock = stockcontrol.getById((int)stockIn.stock.ID);
+                        stockIn.stock.Balance -= stockIn.InBalance;
+                        //stockIn.stock = stockcontrol.getById((int)stockIn.stock.ID);
                         txtStockName.Text = stockIn.stock.Name;
 
                         if (stockIn.vendor != null)

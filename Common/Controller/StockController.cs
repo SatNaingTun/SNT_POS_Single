@@ -24,13 +24,13 @@ namespace SNT_POS_Common.Controller
 
         public System.Data.DataTable getAll()
         {
-            string query = "select ID,StockName,GenericName,Price,Remark,UnitID from tbl_Stock where isDeleted=false";
+            string query = "select ID,StockName,GenericName,Price,Remark,UnitID,StockBalance from tbl_Stock where isDeleted=false";
 
             return OledbData.Execute(query, CommandType.Text);
         }
         public System.Data.DataTable getAllwithUnitName()
         {
-            string query = "select tbl_Stock.ID,StockName,GenericName,tbl_Stock.StockImage,Price,UnitName,UnitID,Remark from tbl_Stock left join tbl_Units On tbl_Stock.UnitID=tbl_Units.ID  where tbl_Stock.isDeleted=false";
+            string query = "select tbl_Stock.ID,StockName,GenericName,tbl_Stock.StockImage,Price,UnitName,UnitID,Remark,StockBalance from tbl_Stock left join tbl_Units On tbl_Stock.UnitID=tbl_Units.ID  where tbl_Stock.isDeleted=false";
 
             return OledbData.Execute(query, CommandType.Text);
         }
@@ -45,7 +45,7 @@ namespace SNT_POS_Common.Controller
 
         public System.Data.DataTable getInStockItem()
         {
-            string query = "select ID,StockName,GenericName,Price,Remark,UnitID from tbl_Stock where isDeleted=false";
+            string query = "select ID,StockName,GenericName,Price,Remark,UnitID,StockBalance,StockBalance from tbl_Stock where isDeleted=false";
 
             return OledbData.Execute(query, CommandType.Text);
         }
@@ -65,18 +65,19 @@ namespace SNT_POS_Common.Controller
 
             if (stock.StockImage==null)
             {
-                string query = "insert into tbl_Stock ([StockName],[GenericName],[Price],[Remark],[UnitID]) values(?,?,?,?,?)";
+                string query = "insert into tbl_Stock ([StockName],[GenericName],[Price],[Remark],[UnitID],[StockBalance]) values(?,?,?,?,?,?)";
                 List<OleDbParameter> parameters = new List<OleDbParameter>();
                 parameters.Add(new OleDbParameter("StockName", stock.Name));
                 parameters.Add(new OleDbParameter("GenericName", stock.GenericName));
                 parameters.Add(new OleDbParameter("Price", stock.Price));
                 parameters.Add(new OleDbParameter("Remark", stock.Remark));
                 parameters.Add(new OleDbParameter("UnitID", stock.unit.ID));
+                parameters.Add(new OleDbParameter("StockBalance", stock.Balance));
                 OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
             }
             else
             {
-                string query = "insert into tbl_Stock ([StockName],[GenericName],[Price],[Remark],[UnitID],[StockImage]) values(?,?,?,?,?,?)";
+                string query = "insert into tbl_Stock ([StockName],[GenericName],[Price],[Remark],[UnitID],[StockImage],[StockBalance]) values(?,?,?,?,?,?,?)";
                 List<OleDbParameter> parameters = new List<OleDbParameter>();
                 parameters.Add(new OleDbParameter("StockName", stock.Name));
                 parameters.Add(new OleDbParameter("GenericName", stock.GenericName));
@@ -84,6 +85,7 @@ namespace SNT_POS_Common.Controller
                 parameters.Add(new OleDbParameter("Remark", stock.Remark));
                 parameters.Add(new OleDbParameter("UnitID", stock.unit.ID));
                 parameters.Add(new OleDbParameter("StockImage", stock.StockImage));
+                parameters.Add(new OleDbParameter("StockBalance", stock.Balance));
                 OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
             }
         }
@@ -127,6 +129,14 @@ namespace SNT_POS_Common.Controller
             parameters.Add(new OleDbParameter("ID", stock.ID));
             OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
         }
+        public void updateBalance(Stock stock)
+        {
+            string query = "update tbl_Stock  set [StockBalance]=? where [ID]=?";
+            List<OleDbParameter> parameters = new List<OleDbParameter>();
+            parameters.Add(new OleDbParameter("StockBalance", stock.Balance));
+            parameters.Add(new OleDbParameter("ID", stock.ID));
+            OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
+        }
 
 
 
@@ -165,6 +175,7 @@ namespace SNT_POS_Common.Controller
                 stock.GenericName = dt.Rows[0].Field<string>("GenericName");
                 stock.Price = dt.Rows[0].Field<decimal>("Price");
                 stock.Remark = dt.Rows[0].Field<string>("Remark");
+                stock.Balance = dt.Rows[0].Field<decimal>("StockBalance");
                 //stock.unit = new Unit();
                // stock.unit.ID = dt.Rows[0].Field<int>("UnitID");
                 stock.unit = unitcontrol.getById(dt.Rows[0].Field<int>("UnitID"));

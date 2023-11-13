@@ -26,8 +26,8 @@ namespace SNT_POS_Single_Sale.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\\vsprojects\\SNT_POS_Single\\SNT_PO" +
-            "S_Single\\Data\\SNT_POS_DB.accdb;Persist Security Info=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Data\\SNT_POS_DB.acc" +
+            "db;Persist Security Info=True")]
         public string SNT_POS_DBConnectionString {
             get {
                 return ((string)(this["SNT_POS_DBConnectionString"]));

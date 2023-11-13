@@ -57,6 +57,15 @@
             this.comboSearch = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.saleGridView1 = new System.Windows.Forms.DataGridView();
+            this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NetAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboSaleType = new System.Windows.Forms.ComboBox();
             this.btnVrSave = new System.Windows.Forms.Button();
@@ -74,15 +83,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NetAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -418,7 +419,8 @@
             this.Discount,
             this.NetAmount,
             this.UnitID,
-            this.UnitName});
+            this.UnitName,
+            this.StockBalance});
             this.saleGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.saleGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.saleGridView1.Location = new System.Drawing.Point(0, 0);
@@ -428,6 +430,51 @@
             this.saleGridView1.TabIndex = 30;
             this.toolTip1.SetToolTip(this.saleGridView1, "You can update the data by double clicking the row and click update button");
             this.saleGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.saleGridView1_CellClick);
+            // 
+            // StockID
+            // 
+            this.StockID.HeaderText = "StockID";
+            this.StockID.Name = "StockID";
+            // 
+            // StockName
+            // 
+            this.StockName.HeaderText = "StockName";
+            this.StockName.Name = "StockName";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            // 
+            // Discount
+            // 
+            this.Discount.HeaderText = "Discount";
+            this.Discount.Name = "Discount";
+            // 
+            // NetAmount
+            // 
+            this.NetAmount.HeaderText = "NetAmount";
+            this.NetAmount.Name = "NetAmount";
+            // 
+            // UnitID
+            // 
+            this.UnitID.HeaderText = "UnitID";
+            this.UnitID.Name = "UnitID";
+            // 
+            // UnitName
+            // 
+            this.UnitName.HeaderText = "UnitName";
+            this.UnitName.Name = "UnitName";
             // 
             // panel2
             // 
@@ -590,50 +637,10 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "CustomerName";
             // 
-            // StockID
+            // StockBalance
             // 
-            this.StockID.HeaderText = "StockID";
-            this.StockID.Name = "StockID";
-            // 
-            // StockName
-            // 
-            this.StockName.HeaderText = "StockName";
-            this.StockName.Name = "StockName";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            // 
-            // Discount
-            // 
-            this.Discount.HeaderText = "Discount";
-            this.Discount.Name = "Discount";
-            // 
-            // NetAmount
-            // 
-            this.NetAmount.HeaderText = "NetAmount";
-            this.NetAmount.Name = "NetAmount";
-            // 
-            // UnitID
-            // 
-            this.UnitID.HeaderText = "UnitID";
-            this.UnitID.Name = "UnitID";
-            // 
-            // UnitName
-            // 
-            this.UnitName.HeaderText = "UnitName";
-            this.UnitName.Name = "UnitName";
+            this.StockBalance.HeaderText = "StockBalance";
+            this.StockBalance.Name = "StockBalance";
             // 
             // SaleForm
             // 
@@ -716,6 +723,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblUnitID;
         private System.Windows.Forms.Label label12;
+       
         private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
@@ -725,6 +733,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NetAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockBalance;
     }
 }
 

@@ -6,7 +6,7 @@ using SNT_POS_Common.utility;
 using System.Data;
 using System.Data.OleDb;
 using SNT_POS_Common.Entity;
-using SNT_POS_Common.Entity;
+
 
 namespace SNT_POS_Common.Controller
 {

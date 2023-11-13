@@ -790,7 +790,6 @@
                         </Border>
                       </Style>
                     </Image>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2756,9 +2755,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>4.15632in</Top>
+        <Top>4.40632in</Top>
         <Left>0.10083in</Left>
-        <Height>2.46861in</Height>
+        <Height>2.39917in</Height>
         <Width>11.71876in</Width>
         <ZIndex>2</ZIndex>
         <Visibility>
@@ -2774,7 +2773,7 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>6.69785in</Height>
+    <Height>6.96868in</Height>
     <Style />
   </Body>
   <ReportParameters>

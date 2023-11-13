@@ -27,6 +27,7 @@ namespace SNT_POS_Single_Sale
         SaleTypeController saletypecontrol = new SaleTypeController(); Session session;
         CompanyProfileController profilecontrol = new CompanyProfileController();
         CustomerController custCtrl = new CustomerController();
+        //List<Vouncher_Item> vrlist=new List<Vouncher_Item>();
      
         /*
         public SaleForm()
@@ -176,19 +177,19 @@ namespace SNT_POS_Single_Sale
             if (suggestGrid.CurrentRow != null && btnAddCart.Text!="Update")
             {
                 item = new Vouncher_Item();
-                 item.stock=new Stock();
-                 item.stock.ID = (int)suggestGrid.CurrentRow.Cells["ID"].Value;
-                item.stock.Name = suggestGrid.CurrentRow.Cells["StockName"].Value.ToString();
-               item.stock.Price = (decimal)suggestGrid.CurrentRow.Cells["Price"].Value;
+               //  item.stock=new Stock();
+               //  item.stock.ID = (int)suggestGrid.CurrentRow.Cells["ID"].Value;
+               // item.stock.Name = suggestGrid.CurrentRow.Cells["StockName"].Value.ToString();
+               //item.stock.Price = (decimal)suggestGrid.CurrentRow.Cells["Price"].Value;
+                item.stock = stockcontrol.getById((int)suggestGrid.CurrentRow.Cells["ID"].Value);
                 item.quantity = txtquantity.Value;
                 item.discount = txtdiscount.Value;
 
                 if (setStockName)
                     txtStockName.Text = item.stock.Name;
 
-                item.stock.unit = new Unit();
-                item.stock.unit.ID = (int)suggestGrid.CurrentRow.Cells["UnitID"].Value;
-                lblUnitName.Text=   item.stock.unit.Name = suggestGrid.CurrentRow.Cells["UnitName"].Value.ToString();
+
+                lblUnitName.Text = item.stock.unit.Name;
                 lblUnitID.Text = item.stock.unit.ID.ToString();
               
             }
@@ -253,7 +254,7 @@ namespace SNT_POS_Single_Sale
                 {
                     saleGridView1.Rows.Add(item.toArray());
                 }
-                else if(btnAddCart.Text=="Update")
+                else if (btnAddCart.Text == "Update")
                 {
                     updateSaleGrid(getStockindex());
                     btnAddCart.Text = "Add to Cart";
@@ -261,8 +262,11 @@ namespace SNT_POS_Single_Sale
                 }
                 else
                 {
-                    updateSaleGrid(getStockindex(),true);
+                    updateSaleGrid(getStockindex(), true);
                 }
+                //vrlist.Add(item);
+                //saleGridView1.DataSource = vrlist;
+
                 txtTotal.Text= getToalNetAmt().ToString();
 
                 txtdiscount.Value = 0;
@@ -429,6 +433,8 @@ namespace SNT_POS_Single_Sale
                         {
                             salecontrol.save(item, session, CustomerID);
                         }
+                        item.stock.Balance -= item.quantity;
+                        stockcontrol.updateBalance(item.stock);
                     }
 
                     sessioncontrol.setVrCount((int)session.ID, VrCount);
@@ -489,20 +495,24 @@ namespace SNT_POS_Single_Sale
         private List<Vouncher_Item> toVouncherList(DataGridView datagridview)
         {
             List<Vouncher_Item> vouncherlist=new List<Vouncher_Item>();
+            
             foreach (DataGridViewRow row in datagridview.Rows)
             {
+                
                 vouncherlist.Add(new Vouncher_Item
                  {
                      stock = new Stock()
                      {
                          ID=(int)row.Cells["StockID"].Value,
                          Name=(string)row.Cells["StockName"].Value,
-                         Price=(decimal)row.Cells["Price"].Value
+                         Price=(decimal)row.Cells["Price"].Value,
+                         Balance=(decimal)row.Cells["StockBalance"].Value
                      },
                      quantity=(decimal)row.Cells["Quantity"].Value,
                      Amt=(decimal)row.Cells["Amount"].Value,
                      discount = (decimal)row.Cells["Discount"].Value,
                      NetAmt = (decimal)row.Cells["NetAmount"].Value,
+                     
 
 
 

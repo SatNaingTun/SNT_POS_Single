@@ -11,7 +11,8 @@ using SNT_POS_Common.Entity;
 namespace SNT_POS_Common.Controller
 {
    public class StockInController : IGetCommon<StockIn>
-    {
+   {
+       StockController stockControl = new StockController();
 
         public StockIn getById(int id)
         {
@@ -85,6 +86,9 @@ namespace SNT_POS_Common.Controller
             parameters.Add(new OleDbParameter("StockInDateTime", stockIn.StockInDateTime.ToString("yyyy-MM-dd hh:mm:ss")));
             parameters.Add(new OleDbParameter("BuyPrice", stockIn.BuyPrice));
             parameters.Add(new OleDbParameter("TotalBuyAmount", stockIn.InBalance * stockIn.BuyPrice));
+
+            //stockIn.stock.Balance += stockIn.InBalance;
+
             if(stockIn.expireDate!=DateTime.MinValue)
             parameters.Add(new OleDbParameter("ExpireDate", stockIn.expireDate));
             if (stockIn.vendor != null)
@@ -93,10 +97,12 @@ namespace SNT_POS_Common.Controller
                 parameters.Add(new OleDbParameter("VendorID", stockIn.vendor.ID));
             }
            
-            string query = "insert into tbl_StockIn "+parameters.toInsertCmd();
+           string query = "insert into tbl_StockIn "+parameters.toInsertCmd();
+           
 
 
             OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
+            stockControl.updateBalance(stockIn.stock);
         }
         /*
         public void update(StockIn stockIn)
@@ -160,6 +166,7 @@ namespace SNT_POS_Common.Controller
               string query = "update tbl_StockIn set " + parameters.toUpdateCmd(NullCol) + " where [ID]=?";
               parameters.Add(new OleDbParameter("ID", stockIn.ID));
               OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
+              stockControl.updateBalance(stockIn.stock);
           }
           /*
             public void update(StockIn stockIn,DateTime? expireDate,int? VendorID)
@@ -225,11 +232,15 @@ namespace SNT_POS_Common.Controller
             {
                 StockIn stockIn = new StockIn();
                 stockIn.ID = dt.Rows[0].Field<int>("ID");
-                stockIn.stock = new Stock();
-                stockIn.stock.ID = dt.Rows[0].Field<int>("StockID");
+                //stockIn.stock = new Stock();
+                //stockIn.stock.ID = dt.Rows[0].Field<int>("StockID");
+                //stockIn.stock.Balance = dt.Rows[0].Field<decimal>("StockBalance");
+                stockIn.stock = stockControl.getById(dt.Rows[0].Field<int>("StockID"));
+
                 stockIn.InBalance = dt.Rows[0].Field<decimal>("InBalance");
                 stockIn.StockInDateTime = dt.Rows[0].Field<DateTime>("StockInDateTime");
                 stockIn.BuyPrice = dt.Rows[0].Field<decimal>("BuyPrice");
+               
                 
                
                 try

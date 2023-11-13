@@ -13,6 +13,7 @@ namespace SNT_POS_Common.Entity
         public string Remark;
         public Unit unit;
         public byte[] StockImage=null;
+        public decimal Balance;
 
         public Stock()
         {
@@ -26,6 +27,7 @@ namespace SNT_POS_Common.Entity
             this.Price = Price;
             this.Remark = Remark;
             this.unit = unit;
+           
         }
         public Stock(string name, string genricname, decimal Price, string Remark, Unit unit, byte[] StockImage)
         {
@@ -34,6 +36,7 @@ namespace SNT_POS_Common.Entity
             this.Price = Price;
             this.Remark = Remark;
             this.unit = unit;
+          
             this.StockImage = StockImage;
         }
 

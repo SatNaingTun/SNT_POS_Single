@@ -45,6 +45,7 @@ namespace SNT_POS_Single_Management
                 {
                     SessionForm sessionForm = new SessionForm();
                     sessionForm.session = sessionControl.getById(int.Parse(searchBox.Text));
+                    sessionForm.Show();
                     this.Close();
                 }
             }
@@ -75,6 +76,7 @@ namespace SNT_POS_Single_Management
               string  ID = dataGridView1.Rows[rowindex].Cells["ID"].Value.ToString();
                 SessionForm sessionForm = new SessionForm();
                 sessionForm.session = sessionControl.getById(int.Parse(ID));
+                sessionForm.Show();
                 this.Close();
             }
 
