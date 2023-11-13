@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateGroup = new System.Windows.Forms.GroupBox();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioDate = new System.Windows.Forms.RadioButton();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.startDate = new System.Windows.Forms.DateTimePicker();
             this.Loadbtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.dateGroup = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
+            this.dateGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.dateGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,6 +55,43 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(676, 69);
             this.panel1.TabIndex = 2;
+            // 
+            // dateGroup
+            // 
+            this.dateGroup.Controls.Add(this.startDate);
+            this.dateGroup.Controls.Add(this.endDate);
+            this.dateGroup.Location = new System.Drawing.Point(14, 3);
+            this.dateGroup.Name = "dateGroup";
+            this.dateGroup.Size = new System.Drawing.Size(331, 38);
+            this.dateGroup.TabIndex = 4;
+            this.dateGroup.TabStop = false;
+            // 
+            // startDate
+            // 
+            this.startDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.startDate.Location = new System.Drawing.Point(6, 12);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(148, 20);
+            this.startDate.TabIndex = 1;
+            this.startDate.Value = new System.DateTime(2018, 9, 29, 0, 0, 0, 0);
+            // 
+            // endDate
+            // 
+            this.endDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.endDate.Location = new System.Drawing.Point(161, 12);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(164, 20);
+            this.endDate.TabIndex = 2;
+            this.endDate.Value = new System.DateTime(2018, 9, 29, 23, 59, 59, 0);
+            // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(353, 38);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(180, 20);
+            this.searchBox.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -90,31 +127,13 @@
             this.radioDate.UseVisualStyleBackColor = true;
             this.radioDate.CheckedChanged += new System.EventHandler(this.radioDate_CheckedChanged);
             // 
-            // endDate
-            // 
-            this.endDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDate.Location = new System.Drawing.Point(161, 12);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(164, 20);
-            this.endDate.TabIndex = 2;
-            this.endDate.Value = new System.DateTime(2018, 9, 29, 23, 59, 59, 0);
-            // 
-            // startDate
-            // 
-            this.startDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDate.Location = new System.Drawing.Point(6, 12);
-            this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(148, 20);
-            this.startDate.TabIndex = 1;
-            this.startDate.Value = new System.DateTime(2018, 9, 29, 0, 0, 0, 0);
-            // 
             // Loadbtn
             // 
-            this.Loadbtn.Location = new System.Drawing.Point(554, 27);
+            this.Loadbtn.Image = global::SNT_POS_Single_Management.Properties.Resources.download_database_21022;
+            this.Loadbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Loadbtn.Location = new System.Drawing.Point(554, 15);
             this.Loadbtn.Name = "Loadbtn";
-            this.Loadbtn.Size = new System.Drawing.Size(75, 23);
+            this.Loadbtn.Size = new System.Drawing.Size(94, 40);
             this.Loadbtn.TabIndex = 3;
             this.Loadbtn.Text = "load";
             this.Loadbtn.UseVisualStyleBackColor = true;
@@ -136,23 +155,6 @@
             this.dataGridView1.TabStop = false;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // searchBox
-            // 
-            this.searchBox.Location = new System.Drawing.Point(353, 38);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(180, 20);
-            this.searchBox.TabIndex = 5;
-            // 
-            // dateGroup
-            // 
-            this.dateGroup.Controls.Add(this.startDate);
-            this.dateGroup.Controls.Add(this.endDate);
-            this.dateGroup.Location = new System.Drawing.Point(14, 3);
-            this.dateGroup.Name = "dateGroup";
-            this.dateGroup.Size = new System.Drawing.Size(331, 38);
-            this.dateGroup.TabIndex = 4;
-            this.dateGroup.TabStop = false;
-            // 
             // SessionListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,10 +167,10 @@
             this.Load += new System.EventHandler(this.SessionListForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.dateGroup.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.dateGroup.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
