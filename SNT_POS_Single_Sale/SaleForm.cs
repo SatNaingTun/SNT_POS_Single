@@ -28,13 +28,13 @@ namespace SNT_POS_Single_Sale
         CompanyProfileController profilecontrol = new CompanyProfileController();
         CustomerController custCtrl = new CustomerController();
         //List<Vouncher_Item> vrlist=new List<Vouncher_Item>();
-     
+
         /*
         public SaleForm()
         {
             InitializeComponent();
         }
-         */ 
+         */
         public SaleForm(Session session)
         {
             InitializeComponent();
@@ -46,37 +46,37 @@ namespace SNT_POS_Single_Sale
             setAutoCompleteCustomer();
             try
             {
-            addStockData(stockcontrol.getAllwithUnitName(),true);
-            lblUserName.Text = session.user.Name;
-          // lblSessionID.Text= sessioncontrol.getByUserId(LoginInfo.userId).Rows[0].Field<int>("ID").ToString();
-           
+                addStockData(stockcontrol.getAllwithUnitName(), true);
+                lblUserName.Text = session.user.Name;
+                // lblSessionID.Text= sessioncontrol.getByUserId(LoginInfo.userId).Rows[0].Field<int>("ID").ToString();
 
-            DataTable dtSaleType = saletypecontrol.getAll();
-            comboSaleType.DataSource = dtSaleType;
-            comboSaleType.ValueMember = dtSaleType.Columns["SaleTypeName"].ToString();
-            comboSaleType.DisplayMember = dtSaleType.Columns["SaleTypeName"].ToString();
-           if (comboSaleType.Items.Count >= 0)
-                comboSaleType.SelectedIndex = 0;
 
-            /*
-           DataTable dtSession = sessioncontrol.getByUserId(LoginInfo.userId);
+                DataTable dtSaleType = saletypecontrol.getAll();
+                comboSaleType.DataSource = dtSaleType;
+                comboSaleType.ValueMember = dtSaleType.Columns["SaleTypeName"].ToString();
+                comboSaleType.DisplayMember = dtSaleType.Columns["SaleTypeName"].ToString();
+                if (comboSaleType.Items.Count >= 0)
+                    comboSaleType.SelectedIndex = 0;
+
+                /*
+               DataTable dtSession = sessioncontrol.getByUserId(LoginInfo.userId);
           
-               int sessionid2=dtSession.Rows[0].Field<int>("ID");
-               lblSessionID.Text = sessionid2.ToString();
-           */
-          
-              
-               lblSessionID.Text = session.ID.ToString();
-             
-           }
-           catch (Exception ex)
-           {
-               MessageBox.Show(ex.Message);
-           }
-          
+                   int sessionid2=dtSession.Rows[0].Field<int>("ID");
+                   lblSessionID.Text = sessionid2.ToString();
+               */
+
+
+                lblSessionID.Text = session.ID.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        private void addStockData(DataTable dt,bool isFirstTime=false)
+        private void addStockData(DataTable dt, bool isFirstTime = false)
         {
             this.dtStock = dt;
             if (dt != null)
@@ -101,11 +101,11 @@ namespace SNT_POS_Single_Sale
                     else
                         comboSearch.SelectedIndex = 0;
                 }
-                }
-                 
-                
+            }
+
+
         }
-      
+
         private void txtStockName_TextChanged(object sender, EventArgs e)
         {
             /*
@@ -134,7 +134,7 @@ namespace SNT_POS_Single_Sale
              */
             try
             {
-                suggestGrid.DataSource = dtStock.filter(txtStockName.Text,comboSearch.SelectedItem.ToString());
+                suggestGrid.DataSource = dtStock.filter(txtStockName.Text, comboSearch.SelectedItem.ToString());
             }
             catch (Exception ex)
             {
@@ -152,7 +152,7 @@ namespace SNT_POS_Single_Sale
             if (e.RowIndex == -1) return;
             getStockdata();
         }
-       
+
         /*
         private void Suggest(string toSuggestText)
         {
@@ -161,26 +161,26 @@ namespace SNT_POS_Single_Sale
             txtStockName.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtStockName.AutoCompleteCustomSource = autotext;
         }
-         */ 
+         */
 
-       
+
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            
+
             addStockData(stockcontrol.getAllwithUnitName());
             txtStockName.Clear();
             setAutoCompleteCustomer();
         }
-        private void getStockdata(bool setStockName=true)
+        private void getStockdata(bool setStockName = true)
         {
-            if (suggestGrid.CurrentRow != null && btnAddCart.Text!="Update")
+            if (suggestGrid.CurrentRow != null && btnAddCart.Text != "Update")
             {
                 item = new Vouncher_Item();
-               //  item.stock=new Stock();
-               //  item.stock.ID = (int)suggestGrid.CurrentRow.Cells["ID"].Value;
-               // item.stock.Name = suggestGrid.CurrentRow.Cells["StockName"].Value.ToString();
-               //item.stock.Price = (decimal)suggestGrid.CurrentRow.Cells["Price"].Value;
+                //  item.stock=new Stock();
+                //  item.stock.ID = (int)suggestGrid.CurrentRow.Cells["ID"].Value;
+                // item.stock.Name = suggestGrid.CurrentRow.Cells["StockName"].Value.ToString();
+                //item.stock.Price = (decimal)suggestGrid.CurrentRow.Cells["Price"].Value;
                 item.stock = stockcontrol.getById((int)suggestGrid.CurrentRow.Cells["ID"].Value);
                 item.quantity = txtquantity.Value;
                 item.discount = txtdiscount.Value;
@@ -191,7 +191,7 @@ namespace SNT_POS_Single_Sale
 
                 lblUnitName.Text = item.stock.unit.Name;
                 lblUnitID.Text = item.stock.unit.ID.ToString();
-              
+
             }
             else if (suggestGrid.CurrentRow != null && btnAddCart.Text == "Update")
             {
@@ -199,9 +199,9 @@ namespace SNT_POS_Single_Sale
                 item.quantity = txtquantity.Value;
                 item.discount = txtdiscount.Value;
             }
-           
+
         }
-       
+
         private void setData()
         {
             if (item != null)
@@ -223,7 +223,7 @@ namespace SNT_POS_Single_Sale
 
         }
 
-        
+
         private void data_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -237,17 +237,17 @@ namespace SNT_POS_Single_Sale
             {
                 addStockData(stockcontrol.getAllwithUnitName());
             }
-           
-           
+
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             getStockdata();
-            if (item != null )
+            if (item != null)
             {
 
-              
+
                 calculate();
                 setData();
                 if (hasStockAlreadyExist() == false)
@@ -267,23 +267,23 @@ namespace SNT_POS_Single_Sale
                 //vrlist.Add(item);
                 //saleGridView1.DataSource = vrlist;
 
-                txtTotal.Text= getToalNetAmt().ToString();
+                txtTotal.Text = getToalNetAmt().ToString();
 
                 txtdiscount.Value = 0;
                 txtquantity.Value = 1;
                 addStockData(stockcontrol.getAllwithUnitName());
                 txtStockName.Clear();
-                
+
 
             }
             else
             {
                 MessageBox.Show("User must add  stock data");
             }
-            
+
 
         }
-        private void updateSaleGrid(int ri,bool autoIncrement=false)
+        private void updateSaleGrid(int ri, bool autoIncrement = false)
         {
             if (autoIncrement == true)
             {
@@ -296,15 +296,15 @@ namespace SNT_POS_Single_Sale
 
             saleGridView1.Rows[ri].Cells["Price"].Value = item.stock.Price;
 
-           saleGridView1.Rows[ri].Cells["Quantity"].Value = item.quantity;
+            saleGridView1.Rows[ri].Cells["Quantity"].Value = item.quantity;
 
-           saleGridView1.Rows[ri].Cells["Amount"].Value = item.Amt;
+            saleGridView1.Rows[ri].Cells["Amount"].Value = item.Amt;
 
-           saleGridView1.Rows[ri].Cells["Discount"].Value = item.discount;
- 
-           saleGridView1.Rows[ri].Cells["NetAmount"].Value = item.NetAmt;
+            saleGridView1.Rows[ri].Cells["Discount"].Value = item.discount;
 
-          
+            saleGridView1.Rows[ri].Cells["NetAmount"].Value = item.NetAmt;
+
+
 
         }
 
@@ -315,7 +315,7 @@ namespace SNT_POS_Single_Sale
                 if (item.stock.ID == (int)row.Cells["StockID"].Value) return true;
                 //More code here
             }
-            
+
             return false;
         }
         private double getToalNetAmt()
@@ -338,7 +338,7 @@ namespace SNT_POS_Single_Sale
             return -1;
         }
 
-       
+
 
         private void SaleForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -389,16 +389,16 @@ namespace SNT_POS_Single_Sale
         {
             if (saleGridView1.Rows.Count > 0)
             {
-                
-               
+
+
                 try
                 {
-                    if (comboSaleType.SelectedValue.ToString() == "Credit" &&  string.IsNullOrEmpty(txtCustomerName.Text))
+                    if (comboSaleType.SelectedValue.ToString() == "Credit" && string.IsNullOrEmpty(txtCustomerName.Text))
                     {
                         txtCustomerName.Focus();
                         throw new ArgumentException("Customer Info need to be added in credit sale");
                     }
-                   
+
                     string curDate = DateTime.Today.ToString("yyyyMMdd");
 
                     int VrCount = sessioncontrol.getVrCount((int)session.ID); VrCount++;
@@ -407,7 +407,7 @@ namespace SNT_POS_Single_Sale
 
 
                     List<Vouncher_Item> list = toVouncherList(saleGridView1);
-                    int CustomerID=0;
+                    int CustomerID = 0;
                     if (!string.IsNullOrEmpty(txtCustomerName.Text))
                     {
                         try
@@ -416,9 +416,9 @@ namespace SNT_POS_Single_Sale
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message,"Customer Data Error");
+                            MessageBox.Show(ex.Message, "Customer Data Error");
                         }
-                         //MessageBox.Show("Return CustomerID is " + CustomerID);
+                        //MessageBox.Show("Return CustomerID is " + CustomerID);
                     }
                     foreach (Vouncher_Item item in list)
                     {
@@ -443,9 +443,9 @@ namespace SNT_POS_Single_Sale
                     DialogResult result = MessageBox.Show("Do you  want to Print?", "SNT POS Printing", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        
-                            localPrint(salecontrol.getByVouncherID(VouncherID), profilecontrol.getAll());
-                       
+
+                        localPrint(salecontrol.getByVouncherID(VouncherID), profilecontrol.getAll());
+
                         /*
                         using (VrReport vr = new VrReport())
                         {
@@ -453,10 +453,10 @@ namespace SNT_POS_Single_Sale
                             vr.Show();
                             vr.localPrint();
                         }
-                         */ 
+                         */
                     }
-               
-                     
+
+
                     saleGridView1.Rows.Clear();
                     txtCustomerName.Clear();
                     txtCustomerPhone.Clear();
@@ -469,7 +469,7 @@ namespace SNT_POS_Single_Sale
                 }
             }
         }
-        private void localPrint(DataTable dtSale,DataTable dtCompany)
+        private void localPrint(DataTable dtSale, DataTable dtCompany)
         {
             try
             {
@@ -494,25 +494,25 @@ namespace SNT_POS_Single_Sale
 
         private List<Vouncher_Item> toVouncherList(DataGridView datagridview)
         {
-            List<Vouncher_Item> vouncherlist=new List<Vouncher_Item>();
-            
+            List<Vouncher_Item> vouncherlist = new List<Vouncher_Item>();
+
             foreach (DataGridViewRow row in datagridview.Rows)
             {
-                
+
                 vouncherlist.Add(new Vouncher_Item
                  {
                      stock = new Stock()
                      {
-                         ID=(int)row.Cells["StockID"].Value,
-                         Name=(string)row.Cells["StockName"].Value,
-                         Price=(decimal)row.Cells["Price"].Value,
-                         Balance=(decimal)row.Cells["StockBalance"].Value
+                         ID = (int)row.Cells["StockID"].Value,
+                         Name = (string)row.Cells["StockName"].Value,
+                         Price = (decimal)row.Cells["Price"].Value,
+                         Balance = (decimal)row.Cells["StockBalance"].Value
                      },
-                     quantity=(decimal)row.Cells["Quantity"].Value,
-                     Amt=(decimal)row.Cells["Amount"].Value,
+                     quantity = (decimal)row.Cells["Quantity"].Value,
+                     Amt = (decimal)row.Cells["Amount"].Value,
                      discount = (decimal)row.Cells["Discount"].Value,
                      NetAmt = (decimal)row.Cells["NetAmount"].Value,
-                     
+
 
 
 
@@ -524,7 +524,7 @@ namespace SNT_POS_Single_Sale
 
             return vouncherlist;
         }
-        private int getCustomerID(string Name,string PhoneNumber,string Address)
+        private int getCustomerID(string Name, string PhoneNumber, string Address)
         {
             try
             {
@@ -532,7 +532,7 @@ namespace SNT_POS_Single_Sale
                 if (contact != null)
                     return (int)contact.ID;
                 else
-                    return custCtrl.save(Name, PhoneNumber,Address);
+                    return custCtrl.save(Name, PhoneNumber, Address);
             }
             catch (Exception ex)
             {
@@ -546,11 +546,11 @@ namespace SNT_POS_Single_Sale
         {
             DataTable dt = new DataTable();
 
-           /*
-            foreach (DataGridViewColumn column in datagridview.Columns)
-                dt.Columns.Add(column.Name, typeof(string));
+            /*
+             foreach (DataGridViewColumn column in datagridview.Columns)
+                 dt.Columns.Add(column.Name, typeof(string));
          
-           */
+            */
             dt.Columns.Add("StockID", typeof(int));
             dt.Columns.Add("StockName", typeof(string));
             for (int k = 2; k < datagridview.Columns.Count; k++)
@@ -562,7 +562,7 @@ namespace SNT_POS_Single_Sale
                 for (int j = 0; j < datagridview.Columns.Count; j++)
                 {
                     dt.Rows[i][j] = datagridview.Rows[i].Cells[j].Value;
-                    
+
                 }
             }
             return dt;
@@ -596,43 +596,43 @@ namespace SNT_POS_Single_Sale
 
         private void btn_calc_Unit_Click(object sender, EventArgs e)
         {
-             try
+            try
             {
                 getStockdata();
-                using (UnitCalculator calculator=new UnitCalculator())
+                using (UnitCalculator calculator = new UnitCalculator())
                 {
                     calculator.addData((int)item.stock.ID);
                     calculator.setConnectionString(Properties.Settings.Default.SNT_POS_DBConnectionString);
                     if (calculator.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                     {
-                       
-                       txtquantity.Value= calculator.getCalculatedQuantity();
-                       txtdiscount.Value = txtquantity.Value * item.stock.Price - calculator.getInsertedPrice();
+
+                        txtquantity.Value = calculator.getCalculatedQuantity();
+                        txtdiscount.Value = txtquantity.Value * item.stock.Price - calculator.getInsertedPrice();
                     }
                 }
             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void setAutoCompleteCustomer()
         {
             dtcustomer = custCtrl.getAll();
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-           collection.AddRange(dtcustomer.AsEnumerable().Select(r => r.Field<string>("Name")).ToArray());
+            collection.AddRange(dtcustomer.AsEnumerable().Select(r => r.Field<string>("Name")).ToArray());
             txtCustomerName.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtCustomerName.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtCustomerName.AutoCompleteCustomSource = collection;
-          
+
             AutoCompleteStringCollection collectionPhone = new AutoCompleteStringCollection();
             collectionPhone.AddRange(dtcustomer.AsEnumerable().Select(r => r.Field<string>("Phone")).ToArray());
             txtCustomerPhone.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtCustomerPhone.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtCustomerPhone.AutoCompleteCustomSource = collectionPhone;
-          
-         
+
+
 
         }
 
@@ -658,14 +658,14 @@ namespace SNT_POS_Single_Sale
                         var results = from myRow in dtcustomer.AsEnumerable()
                                       where myRow.Field<string>("Name") == txtCustomerName.Text
                                       select myRow.Field<String>("Phone");
-                        string result=results.FirstOrDefault<string>();
-                        if(!string.IsNullOrEmpty(result))
-                        txtCustomerPhone.Text = result;
+                        string result = results.FirstOrDefault<string>();
+                        if (!string.IsNullOrEmpty(result))
+                            txtCustomerPhone.Text = result;
                         //collectionPhone.AddRange(results.ToArray());
 
                         var results2 = from myRow in dtcustomer.AsEnumerable()
-                                      where myRow.Field<string>("Name") == txtCustomerName.Text
-                                      select myRow.Field<String>("Address");
+                                       where myRow.Field<string>("Name") == txtCustomerName.Text
+                                       select myRow.Field<String>("Address");
                         string result2 = results.FirstOrDefault<string>();
                         if (!string.IsNullOrEmpty(result2))
                             txtCustAddress.Text = result2;
@@ -678,8 +678,8 @@ namespace SNT_POS_Single_Sale
             {
                 MessageBox.Show(ex.Message);
             }
-          
-           
+
+
         }
 
         private void txtCustomerPhone_TextChanged(object sender, EventArgs e)
@@ -706,7 +706,7 @@ namespace SNT_POS_Single_Sale
                                       select myRow.Field<String>("Name");
                         string result = results.FirstOrDefault<string>();
                         if (!string.IsNullOrEmpty(result))
-                        txtCustomerName.Text=result;
+                            txtCustomerName.Text = result;
 
                         var results2 = from myRow in dtcustomer.AsEnumerable()
                                        where myRow.Field<string>("Phone") == txtCustomerPhone.Text
@@ -726,10 +726,58 @@ namespace SNT_POS_Single_Sale
             }
         }
 
-       
+        public string BindProperty(object property, string propertyName)
+        {
+            string retValue = "";
 
-       
+            if (propertyName.Contains("."))
+            {
+                System.Reflection.PropertyInfo[] arrayProperties;
+                string leftPropertyName;
 
-       
+                leftPropertyName = propertyName.Substring(0, propertyName.IndexOf("."));
+                arrayProperties = property.GetType().GetProperties();
+
+                foreach (System.Reflection.PropertyInfo propertyInfo in arrayProperties)
+                {
+                    if (propertyInfo.Name == leftPropertyName)
+                    {
+                        retValue = BindProperty(
+                            propertyInfo.GetValue(property, null),
+                            propertyName.Substring(propertyName.IndexOf(".") + 1));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Type propertyType;
+                System.Reflection.PropertyInfo propertyInfo;
+
+                propertyType = property.GetType();
+                propertyInfo = propertyType.GetProperty(propertyName);
+                retValue = propertyInfo.GetValue(property, null).ToString();
+            }
+
+            return retValue;
+        }
+
+        private void saleGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if ((saleGridView1.Rows[e.RowIndex].DataBoundItem != null) &&
+        (saleGridView1.Columns[e.ColumnIndex].DataPropertyName.Contains(".")))
+            {
+                e.Value = this.BindProperty(
+                              saleGridView1.Rows[e.RowIndex].DataBoundItem,
+                              saleGridView1.Columns[e.ColumnIndex].DataPropertyName
+                            );
+            }
+
+
+
+
+
+
+        }
     }
 }

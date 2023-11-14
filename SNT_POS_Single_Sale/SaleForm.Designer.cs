@@ -66,6 +66,7 @@
             this.NetAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboSaleType = new System.Windows.Forms.ComboBox();
             this.btnVrSave = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.StockBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -430,6 +430,7 @@
             this.saleGridView1.TabIndex = 30;
             this.toolTip1.SetToolTip(this.saleGridView1, "You can update the data by double clicking the row and click update button");
             this.saleGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.saleGridView1_CellClick);
+            this.saleGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.saleGridView1_CellFormatting);
             // 
             // StockID
             // 
@@ -475,6 +476,11 @@
             // 
             this.UnitName.HeaderText = "UnitName";
             this.UnitName.Name = "UnitName";
+            // 
+            // StockBalance
+            // 
+            this.StockBalance.HeaderText = "StockBalance";
+            this.StockBalance.Name = "StockBalance";
             // 
             // panel2
             // 
@@ -636,11 +642,6 @@
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "CustomerName";
-            // 
-            // StockBalance
-            // 
-            this.StockBalance.HeaderText = "StockBalance";
-            this.StockBalance.Name = "StockBalance";
             // 
             // SaleForm
             // 
