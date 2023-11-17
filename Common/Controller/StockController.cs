@@ -129,14 +129,7 @@ namespace SNT_POS_Common.Controller
             parameters.Add(new OleDbParameter("ID", stock.ID));
             OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
         }
-        public void updateBalance(Stock stock)
-        {
-            string query = "update tbl_Stock  set [StockBalance]=? where [ID]=?";
-            List<OleDbParameter> parameters = new List<OleDbParameter>();
-            parameters.Add(new OleDbParameter("StockBalance", stock.Balance));
-            parameters.Add(new OleDbParameter("ID", stock.ID));
-            OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
-        }
+      
 
 
 

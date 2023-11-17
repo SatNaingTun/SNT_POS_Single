@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace SNT_POS_Common.Entity
 {
-   public class Stock:CommonUnit
+   public class Stock:CommonUnit,IEquatable<Stock>
     {
         
         public string GenericName { get; set; }
@@ -40,5 +41,16 @@ namespace SNT_POS_Common.Entity
             this.StockImage = StockImage;
         }
 
+
+        public bool Equals(Stock other)
+        {
+            if (other == null)
+                return false;
+
+            return
+                object.ReferenceEquals(this.Name, other.Name) ||
+                this.Name != null &&
+                this.Name.Equals(other.Name);
+        }
     }
 }

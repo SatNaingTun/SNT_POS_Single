@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using SNT_POS_Common.Controller;
 using SNT_POS_Common.Entity;
 using SNTPOS_UI_Common;
+using SNT_POS_Single.BussinessRule;
 
 
 namespace SNT_POS_Single_Management
@@ -16,10 +17,11 @@ namespace SNT_POS_Single_Management
     public partial class StockInForm : Form
     {
         DataTable dtStock;
-        StockController stockcontrol = new StockController(); StockIn stockIn;
-        StockInController stockIncontrol = new StockInController();
+        StockController stockControl = new StockController(); StockIn stockIn;
+        StockInController stockInControl = new StockInController();
         AutoCompleteStringCollection autotext = new AutoCompleteStringCollection();
         ContactController vendorCtrl = new ContactController("tbl_Vendor");
+        StockManager stockMgr = new StockManager();
       
         public StockInForm()
         {
@@ -40,17 +42,16 @@ namespace SNT_POS_Single_Management
                 {
                     /*
                     if (hasExpireDate.Checked == false & isKnownVendor.Checked == false)
-                        stockIncontrol.update(stockIn,null,null);
+                        stockInControl.update(stockIn,null,null);
                     else if (hasExpireDate.Checked == false & isKnownVendor.Checked == true)
-                        stockIncontrol.update(stockIn, null, stockIn.vendor.ID);
+                        stockInControl.update(stockIn, null, stockIn.vendor.ID);
                     else if (hasExpireDate.Checked == true & isKnownVendor.Checked == false)
-                        stockIncontrol.update(stockIn, expireDate.Value, null);
+                        stockInControl.update(stockIn, expireDate.Value, null);
                     else
-                        stockIncontrol.update(stockIn, expireDate.Value,stockIn.vendor.ID);
+                        stockInControl.update(stockIn, expireDate.Value,stockIn.vendor.ID);
                     */
-                    stockIn.stock.Balance += stockIn.InBalance;
-                    stockIncontrol.update(stockIn);
-                    
+                   
+                    stockInControl.update(stockIn);
 
                     MessageBox.Show("StockIN updated");
                     btnSave.Text = "Save";
@@ -60,31 +61,34 @@ namespace SNT_POS_Single_Management
                 {
                     /*
                     if (hasExpireDate.Checked == false & isKnownVendor.Checked == false)
-                        stockIncontrol.save(stockIn);
+                        stockInControl.save(stockIn);
                     else if (hasExpireDate.Checked == false & isKnownVendor.Checked == true)
-                        stockIncontrol.save(stockIn, null, vendor);
+                        stockInControl.save(stockIn, null, vendor);
                     else if (hasExpireDate.Checked == true & isKnownVendor.Checked == false)
-                        stockIncontrol.save(stockIn, expireDate.Value, null);
+                        stockInControl.save(stockIn, expireDate.Value, null);
                     else
-                        stockIncontrol.save(stockIn, expireDate.Value,vendor);
+                        stockInControl.save(stockIn, expireDate.Value,vendor);
                      */
-                    stockIn.stock.Balance += stockIn.InBalance;
-                    stockIncontrol.save(stockIn);
-                    //stockIncontrol.save();
+                  
+                    stockInControl.save(stockIn);
+                    //stockInControl.save();
                    
                     MessageBox.Show("New StockIN added");
                 }
+                stockMgr.Receive(stockIn.stock, stockIn.InBalance);
             }
             else
             {
                 MessageBox.Show("Selected Stock should not be null");
             }
+            addStockData(stockControl.getAllwithUnitName());
+            txtStockName.Clear();
             
 
         }
         private void loadStockdata()
         {
-            if (btnSave.Text == "Save" && suggestGrid.CurrentRow != null)
+            if (btnSave.Text == "Save")
             {
                 stockIn = new StockIn();
 
@@ -95,12 +99,12 @@ namespace SNT_POS_Single_Management
                 //stockIn.stock.Price = (decimal)suggestGrid.CurrentRow.Cells["Price"].Value;
                 //stockIn.stock.Balance = (decimal)suggestGrid.CurrentRow.Cells["StockBalance"].Value;
 
-                stockIn.stock = stockcontrol.getById((int)suggestGrid.CurrentRow.Cells["ID"].Value);
+               
             }
             if (suggestGrid.CurrentRow != null)
             {
                 // stockIn = new StockIn();
-                
+                stockIn.stock = stockControl.getById((int)suggestGrid.CurrentRow.Cells["ID"].Value);
 
                 stockIn.InBalance = txtquantity.Value;
                 stockIn.BuyPrice = numBuyPrice.Value;
@@ -247,13 +251,13 @@ namespace SNT_POS_Single_Management
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            addStockData(stockcontrol.getAllwithUnitName());
+            addStockData(stockControl.getAllwithUnitName());
             txtStockName.Clear();
         }
         /*
         private void Suggest(string toSuggestText)
         {
-            autotext.AddRange(stockcontrol.getByName(toSuggestText).AsEnumerable().Select(r => r.Field<string>("StockName")).ToArray());
+            autotext.AddRange(stockControl.getByName(toSuggestText).AsEnumerable().Select(r => r.Field<string>("StockName")).ToArray());
             txtStockName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtStockName.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtStockName.AutoCompleteCustomSource = autotext;
@@ -265,7 +269,7 @@ namespace SNT_POS_Single_Management
            
             if ((e.KeyData & e.KeyCode) == Keys.F5)
             {
-                addStockData(stockcontrol.getAll());
+                addStockData(stockControl.getAll());
             }
 
 
@@ -277,23 +281,29 @@ namespace SNT_POS_Single_Management
             {
                 using (SearchForm sf = new SearchForm())
                 {
-                    sf.addData(stockIncontrol.getAll());
+                    sf.addData(stockInControl.getAll());
                     //sf.MdiParent = this.MdiParent;
                     if (sf.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                     {
-                        stockIn = stockIncontrol.getById(sf.getID());
-                        stockIn.stock.Balance -= stockIn.InBalance;
-                        //stockIn.stock = stockcontrol.getById((int)stockIn.stock.ID);
+                      
+                        stockIn = stockInControl.getById(sf.getID());
+                        //MessageBox.Show("OriginalStockBalance:" + originalStockIN.stock.Balance+"InBalance:"+originalStockIN.InBalance);
+                       
+                        //stockIn.stock = stockControl.getById((int)stockIn.stock.ID);
                         txtStockName.Text = stockIn.stock.Name;
 
                         if (stockIn.vendor != null)
                         {
                             stockIn.vendor = vendorCtrl.getById((int)stockIn.vendor.ID);
                         }
+                        stockMgr.Dispatch(stockIn.stock, stockIn.InBalance);
                         setData(stockIn);
                         btnSave.Text = "Update";
                         btn_delete.Visible = true;
+
                     }
+                    //MessageBox.Show("StockBalance:"+originalStockIN.stock.Balance);
+                  
 
                 }
             }
@@ -314,7 +324,7 @@ namespace SNT_POS_Single_Management
         private void StockInForm_Load(object sender, EventArgs e)
         {
             stDate.Value = DateTime.Now;
-            addStockData(stockcontrol.getAllwithUnitName(),true);
+            addStockData(stockControl.getAllwithUnitName(),true);
             expireDate.Value = DateTime.Today.AddYears(1);
             getVendorList();
         }
@@ -326,12 +336,12 @@ namespace SNT_POS_Single_Management
               {
                   if (stockIn != null)
                   {
-                      stockIncontrol.delete((int)stockIn.ID);
+                      stockInControl.delete((int)stockIn.ID);
                   }
                   btnSave.Text = "Save";
                   btn_delete.Visible = false;
 
-                  addStockData(stockcontrol.getAllwithUnitName());
+                  addStockData(stockControl.getAllwithUnitName());
                   txtStockName.Clear();
               }
            
@@ -366,8 +376,8 @@ namespace SNT_POS_Single_Management
            
                 stockIn.stock.Price = txtSellPrice.Value;
                
-                stockcontrol.updatePrice(stockIn.stock);
-                addStockData(stockcontrol.getAllwithUnitName());
+                stockControl.updatePrice(stockIn.stock);
+                addStockData(stockControl.getAllwithUnitName());
                 txtStockName.Text = stockIn.stock.Name;
                 Textfilter();
                 MessageBox.Show(stockIn.stock.Price + "Price updated");

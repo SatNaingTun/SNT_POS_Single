@@ -10,6 +10,7 @@ using SNT_POS_Common.Entity;
 using SNT_POS_Common.Controller;
 using SNT_POS_Common.utility;
 using Microsoft.Reporting.WinForms;
+using SNT_POS_Single.BussinessRule;
 
 namespace SNT_POS_Single_Management
 {
@@ -19,9 +20,11 @@ namespace SNT_POS_Single_Management
         SaleController salecontrol = new SaleController();
         StockController stockcontrol = new StockController();
         SessionController sessioncontrol = new SessionController();
-        Vouncher_Item item;
+        Vouncher_Item item,originalItem;
+        StockManager stockMgr = new StockManager();
         SaleTypeController saletypecontrol = new SaleTypeController();
         CompanyProfileController profilecontrol = new CompanyProfileController(); CustomerController custCtrl = new CustomerController();
+
         DataTable dtcustomer;
       
         public SessionForm()
@@ -95,7 +98,7 @@ namespace SNT_POS_Single_Management
                  //item.saletype = saletypecontrol.getById((int)dataGridView1.CurrentRow.Cells["SaleTypeID"].Value);
                  //item.Amt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Amount"].Value);
                  //item.NetAmt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["NetAmount"].Value);
-
+                    originalItem = salecontrol.getItemById((int)dataGridView1.CurrentRow.Cells["ID"].Value);
                   item = salecontrol.getItemById((int)dataGridView1.CurrentRow.Cells["ID"].Value);
                  lblID.Text = item.ID.ToString();
                  StockCombo.SelectedIndex = StockCombo.FindString(item.stock.Name);
@@ -121,8 +124,7 @@ namespace SNT_POS_Single_Management
                comboSellPrice.Items.Clear();
                comboSellPrice.Items.Add(item.stock.Price);
                comboSellPrice.Items.Add(stockcontrol.getStockPrice((int)item.stock.ID).ToString());
-
-               item.stock.Balance += item.quantity;
+             
 
                if (comboSellPrice.Items.Count > 0)
                    comboSellPrice.SelectedIndex = 0;
@@ -170,12 +172,16 @@ namespace SNT_POS_Single_Management
                     {
                         salecontrol.updateSaleType(item,getCustomerID(txtCustomerName.Text,txtCustomerPhone.Text));
                     }
-                    item.stock.Balance -= item.quantity;
-                    stockcontrol.updateBalance(item.stock);
+                    
+                    
 
                     txtNetAmount.Text = item.NetAmt.ToString();
                    // MessageBox.Show(item.toArray().ToString());
                     refreshData(salecontrol.getBySessionId((int)session.ID));
+
+                    stockMgr.Receive(originalItem.stock, originalItem.quantity);
+                    stockMgr.Dispatch(item.stock, item.quantity);
+
                     MessageBox.Show("Updated");
                    
                 }
@@ -210,6 +216,7 @@ namespace SNT_POS_Single_Management
         private void btn_Sec_delete_Click(object sender, EventArgs e)
         {
             sessioncontrol.delete((int)session.ID);
+
             this.Close();
         }
 
@@ -219,6 +226,7 @@ namespace SNT_POS_Single_Management
               if (result == DialogResult.Yes)
               {
                   salecontrol.delete(item.ID);
+                  stockMgr.Receive(item.stock, item.quantity);
                   refreshData(salecontrol.getBySessionId((int)session.ID));
               }
         }
@@ -372,6 +380,7 @@ namespace SNT_POS_Single_Management
 
                 if (!String.IsNullOrEmpty(StockCombo.SelectedValue.ToString()) && comboSellPrice.Items.Count > 1)
                 {
+                   
                     Stock changedstock = stockcontrol.getByName(StockCombo.SelectedValue.ToString());
 
                     if (changedstock != null)

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinessRule\StockManager.cs" />
     <Compile Include="Controller\CompanyProfileController.cs" />
     <Compile Include="Controller\ContactController.cs" />
     <Compile Include="Controller\CurrencyUnitController.cs" />

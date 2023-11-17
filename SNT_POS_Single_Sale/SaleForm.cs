@@ -12,6 +12,7 @@ using SNT_POS_Common.Controller;
 using Microsoft.Reporting.WinForms;
 using SNTPOS_UI_Common;
 using SNT_POS_Common.utility;
+using SNT_POS_Single.BussinessRule;
 
 
 namespace SNT_POS_Single_Sale
@@ -387,6 +388,7 @@ namespace SNT_POS_Single_Sale
 
         private void btnVrSave_Click(object sender, EventArgs e)
         {
+            StockManager stockMgr = new StockManager();
             if (saleGridView1.Rows.Count > 0)
             {
 
@@ -433,8 +435,8 @@ namespace SNT_POS_Single_Sale
                         {
                             salecontrol.save(item, session, CustomerID);
                         }
-                        item.stock.Balance -= item.quantity;
-                        stockcontrol.updateBalance(item.stock);
+                        stockMgr.Dispatch(item.stock, item.quantity);
+                        
                     }
 
                     sessioncontrol.setVrCount((int)session.ID, VrCount);

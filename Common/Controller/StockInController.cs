@@ -87,7 +87,7 @@ namespace SNT_POS_Common.Controller
             parameters.Add(new OleDbParameter("BuyPrice", stockIn.BuyPrice));
             parameters.Add(new OleDbParameter("TotalBuyAmount", stockIn.InBalance * stockIn.BuyPrice));
 
-            //stockIn.stock.Balance += stockIn.InBalance;
+            
 
             if(stockIn.expireDate!=DateTime.MinValue)
             parameters.Add(new OleDbParameter("ExpireDate", stockIn.expireDate));
@@ -102,7 +102,7 @@ namespace SNT_POS_Common.Controller
 
 
             OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
-            stockControl.updateBalance(stockIn.stock);
+           
         }
         /*
         public void update(StockIn stockIn)
@@ -166,7 +166,7 @@ namespace SNT_POS_Common.Controller
               string query = "update tbl_StockIn set " + parameters.toUpdateCmd(NullCol) + " where [ID]=?";
               parameters.Add(new OleDbParameter("ID", stockIn.ID));
               OledbData.ExecuteSave(query, CommandType.Text, null, parameters);
-              stockControl.updateBalance(stockIn.stock);
+              
           }
           /*
             public void update(StockIn stockIn,DateTime? expireDate,int? VendorID)
