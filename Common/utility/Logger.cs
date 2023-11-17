@@ -6,7 +6,7 @@ using System.IO;
 
 namespace SNT_POS_Common.utility
 {
-    class Logger
+   public class Logger
     {
         public static void errorLog(string Message)
         {

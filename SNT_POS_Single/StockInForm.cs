@@ -10,6 +10,7 @@ using SNT_POS_Common.Controller;
 using SNT_POS_Common.Entity;
 using SNTPOS_UI_Common;
 using SNT_POS_Single.BussinessRule;
+using SNT_POS_Common.utility;
 
 
 namespace SNT_POS_Single_Management
@@ -106,6 +107,7 @@ namespace SNT_POS_Single_Management
                 // stockIn = new StockIn();
                 stockIn.stock = stockControl.getById((int)suggestGrid.CurrentRow.Cells["ID"].Value);
 
+                
                 stockIn.InBalance = txtquantity.Value;
                 stockIn.BuyPrice = numBuyPrice.Value;
                 stockIn.StockInDateTime = stDate.Value;
@@ -115,6 +117,9 @@ namespace SNT_POS_Single_Management
                 }
                 else
                     stockIn.expireDate = DateTime.MinValue;
+
+               
+
                 if (isKnownVendor.Checked == true)
                 {
                     stockIn.vendor = vendorCtrl.getByName(VendorCombo.SelectedValue.ToString());
@@ -182,25 +187,7 @@ namespace SNT_POS_Single_Management
             if (dt != null)
             {
                 suggestGrid.DataSource = dt;
-                if (isFirstTime == true)
-                {
-                    for (int i = 0; i < dt.Columns.Count; i++)
-                    {
-                        comboSearch.Items.Add(dt.Columns[i].ColumnName);
-
-                        if (dt.Columns[i].DataType == typeof(byte[]))
-                        {
-                            DataGridViewImageColumn imgCol = (DataGridViewImageColumn)suggestGrid.Columns[i];
-                            imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-
-
-                        }
-                    }
-                    if (comboSearch.Items.Count >= 2)
-                        comboSearch.SelectedIndex = 1;
-                    else
-                        comboSearch.SelectedIndex = 0;
-                }
+                suggestGrid.changeImageLayout(DataGridViewImageCellLayout.Zoom);
                 
             }
         }
@@ -216,37 +203,37 @@ namespace SNT_POS_Single_Management
                 isKnownVendor.Checked = false;
         }
 
-        private void Textfilter()
-        {
-            try
-            {
-                DataView dv = dtStock.DefaultView;
-                // dv.RowFilter = string.Format(dt.Columns[1].ColumnName+"LIKE '%{0}%'", txtSearch.Text);
-                if (dtStock.Columns[comboSearch.SelectedItem.ToString()].DataType == Type.GetType("System.Int32"))
-                {
-                    if (txtStockName.Text == string.Empty)
-                    {
-                        dv.RowFilter = string.Empty;
-                    }
-                    else
-                        dv.RowFilter = string.Format(comboSearch.SelectedItem.ToString() + " = {0}", txtStockName.Text);
-                }
-                else
-                {
-                    dv.RowFilter = string.Format(comboSearch.SelectedItem.ToString() + " LIKE '%{0}%'", txtStockName.Text);
-                }
+        //private void Textfilter()
+        //{
+        //    try
+        //    {
+        //        DataView dv = dtStock.DefaultView;
+        //        // dv.RowFilter = string.Format(dt.Columns[1].ColumnName+"LIKE '%{0}%'", txtSearch.Text);
+        //        if (dtStock.Columns[comboSearch.SelectedItem.ToString()].DataType == Type.GetType("System.Int32"))
+        //        {
+        //            if (txtStockName.Text == string.Empty)
+        //            {
+        //                dv.RowFilter = string.Empty;
+        //            }
+        //            else
+        //                dv.RowFilter = string.Format(comboSearch.SelectedItem.ToString() + " = {0}", txtStockName.Text);
+        //        }
+        //        else
+        //        {
+        //            dv.RowFilter = string.Format(comboSearch.SelectedItem.ToString() + " LIKE '%{0}%'", txtStockName.Text);
+        //        }
 
-                suggestGrid.DataSource = dv;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //        suggestGrid.DataSource = dv;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void txtStockName_TextChanged(object sender, EventArgs e)
         {
-            Textfilter();
+            suggestGrid.DataSource = dtStock.filter(txtStockName.Text, comboSearch.SelectedItem.ToString());
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -271,6 +258,7 @@ namespace SNT_POS_Single_Management
             {
                 addStockData(stockControl.getAll());
             }
+          
 
 
         }
@@ -318,6 +306,7 @@ namespace SNT_POS_Single_Management
             if (e.RowIndex == -1) return;
             loadStockdata();
             txtSellPrice.Value = stockIn.stock.Price;
+            txtStockName.Text = stockIn.stock.Name;
             
         }
 
@@ -325,6 +314,7 @@ namespace SNT_POS_Single_Management
         {
             stDate.Value = DateTime.Now;
             addStockData(stockControl.getAllwithUnitName(),true);
+            comboSearch.setDataColName(ref dtStock);
             expireDate.Value = DateTime.Today.AddYears(1);
             getVendorList();
         }
@@ -379,7 +369,7 @@ namespace SNT_POS_Single_Management
                 stockControl.updatePrice(stockIn.stock);
                 addStockData(stockControl.getAllwithUnitName());
                 txtStockName.Text = stockIn.stock.Name;
-                Textfilter();
+                suggestGrid.DataSource = dtStock.filter(txtStockName.Text);
                 MessageBox.Show(stockIn.stock.Price + "Price updated");
           
            

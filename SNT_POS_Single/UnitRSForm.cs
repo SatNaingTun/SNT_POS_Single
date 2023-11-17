@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using SNT_POS_Common.Controller;
 using SNT_POS_Common.Entity;
+using SNT_POS_Common.utility;
 
 namespace SNT_POS_Single_Management
 {
@@ -179,6 +180,7 @@ namespace SNT_POS_Single_Management
                 }
                 catch (Exception ex)
                 {
+                    Logger.errorLog(ex.Message);
                     unitRS = null;
                 }
 

@@ -71,6 +71,7 @@ namespace SNTPOS_UI_Common
             }
             catch (OleDbException olex)
             {
+                Logger.errorLog(olex.Message);
                 this.DialogResult = DialogResult.Cancel;
                 using (SNTPOS_UI_Common.DataConnectFrom dcf = new SNTPOS_UI_Common.DataConnectFrom("SNT_POS_Single_Sale"))
                 {

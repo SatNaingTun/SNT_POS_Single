@@ -47,7 +47,10 @@ namespace SNT_POS_Single_Sale
             setAutoCompleteCustomer();
             try
             {
-                addStockData(stockcontrol.getAllwithUnitName(), true);
+                addStockData(stockcontrol.getAllwithUnitName());
+                comboSearch.setDataColName(ref dtStock);
+                suggestGrid.changeImageLayout(DataGridViewImageCellLayout.Zoom);
+
                 lblUserName.Text = session.user.Name;
                 // lblSessionID.Text= sessioncontrol.getByUserId(LoginInfo.userId).Rows[0].Field<int>("ID").ToString();
 
@@ -77,31 +80,13 @@ namespace SNT_POS_Single_Sale
 
         }
 
-        private void addStockData(DataTable dt, bool isFirstTime = false)
+        private void addStockData(DataTable dt)
         {
             this.dtStock = dt;
             if (dt != null)
             {
                 suggestGrid.DataSource = dt;
-                if (isFirstTime == true)
-                {
-                    for (int i = 0; i < dt.Columns.Count; i++)
-                    {
-                        comboSearch.Items.Add(dt.Columns[i].ColumnName);
-
-                        if (dt.Columns[i].DataType == typeof(byte[]))
-                        {
-                            DataGridViewImageColumn imgCol = (DataGridViewImageColumn)suggestGrid.Columns[i];
-                            imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-
-
-                        }
-                    }
-                    if (comboSearch.Items.Count >= 2)
-                        comboSearch.SelectedIndex = 1;
-                    else
-                        comboSearch.SelectedIndex = 0;
-                }
+                
             }
 
 
@@ -109,30 +94,7 @@ namespace SNT_POS_Single_Sale
 
         private void txtStockName_TextChanged(object sender, EventArgs e)
         {
-            /*
-            DataView dv = dtStock.DefaultView;
-            // dv.RowFilter = string.Format(dt.Columns[1].ColumnName+"LIKE '%{0}%'", txtSearch.Text);
-            if (dtStock.Columns[comboSearch.SelectedItem.ToString()].DataType == Type.GetType("System.Int32"))
-            {
-                if (txtStockName.Text == string.Empty)
-                {
-                    dv.RowFilter = string.Empty;
-                }
-                else
-                    dv.RowFilter = string.Format(comboSearch.SelectedItem.ToString() + " = {0}", txtStockName.Text);
-            }
-            else if (comboSearch.SelectedItem.ToString() == "StockName")
-            {
-                //dv.RowFilter = string.Format(comboSearch.SelectedItem.ToString() + " LIKE '%{0}%'", txtStockName.Text);
-                dv.RowFilter = string.Format("StockName  LIKE '%{0}%' or GenericName  LIKE '%{0}%' ", txtStockName.Text);
-            }
-            else
-            {
-                dv.RowFilter = string.Format(comboSearch.SelectedItem.ToString() + " LIKE '%{0}%'", txtStockName.Text);
-            }
-
-            suggestGrid.DataSource = dv;
-             */
+           
             try
             {
                 suggestGrid.DataSource = dtStock.filter(txtStockName.Text, comboSearch.SelectedItem.ToString());
