@@ -621,7 +621,7 @@ namespace SNT_POS_Single_Sale
                     {
                         var results = from myRow in dtcustomer.AsEnumerable()
                                       where myRow.Field<string>("Name") == txtCustomerName.Text
-                                      select myRow.Field<String>("Phone");
+                                      select myRow.Field<string>("Phone");
                         string result = results.FirstOrDefault<string>();
                         if (!string.IsNullOrEmpty(result))
                             txtCustomerPhone.Text = result;
@@ -629,7 +629,7 @@ namespace SNT_POS_Single_Sale
 
                         var results2 = from myRow in dtcustomer.AsEnumerable()
                                        where myRow.Field<string>("Name") == txtCustomerName.Text
-                                       select myRow.Field<String>("Address");
+                                       select myRow.Field<string>("Address");
                         string result2 = results.FirstOrDefault<string>();
                         if (!string.IsNullOrEmpty(result2))
                             txtCustAddress.Text = result2;
@@ -690,58 +690,58 @@ namespace SNT_POS_Single_Sale
             }
         }
 
-        public string BindProperty(object property, string propertyName)
-        {
-            string retValue = "";
+        //public string BindProperty(object property, string propertyName)
+        //{
+        //    string retValue = "";
 
-            if (propertyName.Contains("."))
-            {
-                System.Reflection.PropertyInfo[] arrayProperties;
-                string leftPropertyName;
+        //    if (propertyName.Contains("."))
+        //    {
+        //        System.Reflection.PropertyInfo[] arrayProperties;
+        //        string leftPropertyName;
 
-                leftPropertyName = propertyName.Substring(0, propertyName.IndexOf("."));
-                arrayProperties = property.GetType().GetProperties();
+        //        leftPropertyName = propertyName.Substring(0, propertyName.IndexOf("."));
+        //        arrayProperties = property.GetType().GetProperties();
 
-                foreach (System.Reflection.PropertyInfo propertyInfo in arrayProperties)
-                {
-                    if (propertyInfo.Name == leftPropertyName)
-                    {
-                        retValue = BindProperty(
-                            propertyInfo.GetValue(property, null),
-                            propertyName.Substring(propertyName.IndexOf(".") + 1));
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                Type propertyType;
-                System.Reflection.PropertyInfo propertyInfo;
+        //        foreach (System.Reflection.PropertyInfo propertyInfo in arrayProperties)
+        //        {
+        //            if (propertyInfo.Name == leftPropertyName)
+        //            {
+        //                retValue = BindProperty(
+        //                    propertyInfo.GetValue(property, null),
+        //                    propertyName.Substring(propertyName.IndexOf(".") + 1));
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Type propertyType;
+        //        System.Reflection.PropertyInfo propertyInfo;
 
-                propertyType = property.GetType();
-                propertyInfo = propertyType.GetProperty(propertyName);
-                retValue = propertyInfo.GetValue(property, null).ToString();
-            }
+        //        propertyType = property.GetType();
+        //        propertyInfo = propertyType.GetProperty(propertyName);
+        //        retValue = propertyInfo.GetValue(property, null).ToString();
+        //    }
 
-            return retValue;
-        }
+        //    return retValue;
+        //}
 
-        private void saleGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if ((saleGridView1.Rows[e.RowIndex].DataBoundItem != null) &&
-        (saleGridView1.Columns[e.ColumnIndex].DataPropertyName.Contains(".")))
-            {
-                e.Value = this.BindProperty(
-                              saleGridView1.Rows[e.RowIndex].DataBoundItem,
-                              saleGridView1.Columns[e.ColumnIndex].DataPropertyName
-                            );
-            }
-
-
+        //private void saleGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        //{
+        //    if ((saleGridView1.Rows[e.RowIndex].DataBoundItem != null) &&
+        //(saleGridView1.Columns[e.ColumnIndex].DataPropertyName.Contains(".")))
+        //    {
+        //        e.Value = this.BindProperty(
+        //                      saleGridView1.Rows[e.RowIndex].DataBoundItem,
+        //                      saleGridView1.Columns[e.ColumnIndex].DataPropertyName
+        //                    );
+        //    }
 
 
 
 
-        }
+
+
+        //}
     }
 }

@@ -430,7 +430,7 @@
             this.saleGridView1.TabIndex = 30;
             this.toolTip1.SetToolTip(this.saleGridView1, "You can update the data by double clicking the row and click update button");
             this.saleGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.saleGridView1_CellClick);
-            this.saleGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.saleGridView1_CellFormatting);
+          
             // 
             // StockID
             // 

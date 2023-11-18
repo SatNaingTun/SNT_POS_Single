@@ -34,3 +34,4 @@ E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\RdlCompile.cache
 E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\RdlCompile.compiled
 E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.exe
 E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.pdb
+E:\vsprojects\SNT_POS_Single\SNT_POS_Single_Sale\obj\x86\Debug\SNT_POS_Single_Sale.Test.resources

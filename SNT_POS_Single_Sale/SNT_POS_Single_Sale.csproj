@@ -67,6 +67,12 @@
     <Compile Include="SaleForm.Designer.cs">
       <DependentUpon>SaleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="VrReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <EmbeddedResource Include="Report\Vouncher2.rdlc" />
     <EmbeddedResource Include="SaleForm.resx">
       <DependentUpon>SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VrReport.resx">
       <DependentUpon>VrReport.cs</DependentUpon>
@@ -127,6 +136,9 @@
     <None Include="Resources\Save_Icon_icon-icons.com_69139.png" />
     <None Include="Resources\iconfinder-trash-4341321_120557.png" />
     <Content Include="SNT_POS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

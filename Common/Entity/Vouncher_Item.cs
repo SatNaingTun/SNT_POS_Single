@@ -9,11 +9,12 @@ namespace SNT_POS_Common.Entity
   public  class Vouncher_Item
     {
         public int ID { get; set; }
-      public Stock stock;
+     
+      public Stock stock {get;set;}
       public SaleType saletype { get; set; }
       public  decimal  Amt, quantity, discount, NetAmt;
       public string VouncherID;
-      public Contact customer;
+      public Contact customer { get; set; }
 
       public Vouncher_Item()
       {
