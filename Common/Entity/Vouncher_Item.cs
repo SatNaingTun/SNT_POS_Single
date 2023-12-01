@@ -14,7 +14,9 @@ namespace SNT_POS_Common.Entity
       public SaleType saletype { get; set; }
       public  decimal  Amt, quantity, discount, NetAmt;
       public string VouncherID;
+      public DateTime saleDateTime;
       public Contact customer { get; set; }
+
 
       public Vouncher_Item()
       {

@@ -30,6 +30,7 @@ namespace SNTPOS_UI_Common
                 {
                     DataGridViewImageColumn imgCol = (DataGridViewImageColumn)column;
                     imgCol.ImageLayout = layout;
+                    imgCol.DefaultCellStyle.NullValue = null;
                 }
             }
         }

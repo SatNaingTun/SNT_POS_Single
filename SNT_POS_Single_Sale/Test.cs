@@ -22,7 +22,23 @@ namespace SNT_POS_Single_Sale
         private void Test_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = vouncher;
-            dataGridView1.DataMember = "Vouncher_Item";
+           
+            //dataGridView1.DataMember = "Vouncher_Item";
+
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Vouncher_Item item = new Vouncher_Item();
+            item.ID = vouncher.Count+1;
+            item.quantity = vouncher.Count + 1;
+            item.Amt = 1000 * item.quantity;
+            item.NetAmt = 1000 * item.quantity;
+            item.stock = new Stock();
+            item.stock.ID+=1;
+            item.stock.Name = "StockName" + item.stock.ID;
+            vouncher.Add(item);
         }
     }
 }
