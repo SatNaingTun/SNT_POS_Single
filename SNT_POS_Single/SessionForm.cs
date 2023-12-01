@@ -98,15 +98,20 @@ namespace SNT_POS_Single_Management
                  //item.saletype = saletypecontrol.getById((int)dataGridView1.CurrentRow.Cells["SaleTypeID"].Value);
                  //item.Amt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["Amount"].Value);
                  //item.NetAmt = Convert.ToDecimal(dataGridView1.CurrentRow.Cells["NetAmount"].Value);
-                    originalItem = salecontrol.getItemById((int)dataGridView1.CurrentRow.Cells["ID"].Value);
-                  item = salecontrol.getItemById((int)dataGridView1.CurrentRow.Cells["ID"].Value);
-                 lblID.Text = item.ID.ToString();
-                 StockCombo.SelectedIndex = StockCombo.FindString(item.stock.Name);
-                 txtquantity.Value = item.quantity;
-               
+                    lblID.Text = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+                    originalItem = salecontrol.getItemById(int.Parse(lblID.Text));
+                     item = salecontrol.getItemById(int.Parse(lblID.Text));
 
-                  
-                  comboSaleType.SelectedIndex = comboSaleType.FindString(item.saletype.Name);
+                if(item!=null)
+                {
+
+                 StockCombo.SelectedIndex = StockCombo.FindString(item.stock.Name);
+                 
+                    txtquantity.Value = item.quantity;
+
+
+
+                    comboSaleType.SelectedIndex = comboSaleType.FindString(item.saletype.Name);
                    
 
               
@@ -114,20 +119,24 @@ namespace SNT_POS_Single_Management
                  //txtCustomerPhone.Text = dataGridView1.CurrentRow.Cells["CustomerPhone"].Value.ToString();
                  //lblCustomerID.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
 
-                  txtCustomerName.Text = item.customer.Name;
-                  txtCustomerPhone.Text = item.customer.Phone;
-                  lblCustomerID.Text = item.customer.ID.ToString();
+                  if (item.customer != null)
+                  {
+                      txtCustomerName.Text = item.customer.Name;
+                      txtCustomerPhone.Text = item.customer.Phone;
+                      lblCustomerID.Text = item.customer.ID.ToString();
+                  }
 
                 txtAmount.Text = item.Amt.ToString();
                txtNetAmount.Text = item.NetAmt.ToString();
                 //  comboSaleType.SelectedIndex = comboSaleType.FindString(item.saletype.Name);
                comboSellPrice.Items.Clear();
-               comboSellPrice.Items.Add(item.stock.Price);
+               comboSellPrice.Items.Add(item.stock.Price.ToString());
                comboSellPrice.Items.Add(stockcontrol.getStockPrice((int)item.stock.ID).ToString());
-             
+
 
                if (comboSellPrice.Items.Count > 0)
                    comboSellPrice.SelectedIndex = 0;
+                    }
                 }
                 catch (Exception ex)
                 {
